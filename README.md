@@ -12,6 +12,7 @@ AHK --> DllCall --> WinAPI
 
 ### Memory Management Functions
 * [GetPhysicallyInstalledSystemMemory](src/Memory Management Functions/GetPhysicallyInstalledSystemMemory.ahk)
+* [GlobalMemoryStatusEx](src/Memory Management Functions/GlobalMemoryStatusEx.ahk)
 
 ### Process and Thread Functions
 * [GetCurrentProcessId](src/Process and Thread Functions/GetCurrentProcessId.ahk)
@@ -19,6 +20,8 @@ AHK --> DllCall --> WinAPI
 * [SleepEx](src/Process and Thread Functions/SleepEx.ahk)
 
 ### System Information Functions
+* [GetVersion](src/System Information Functions/GetVersion.ahk)
+* [GetVersionEx](src/System Information Functions/GetVersionEx.ahk)
 * [QueryPerformanceCounter](src/System Information Functions/QueryPerformanceCounter.ahk)
 * [QueryPerformanceFrequency](src/System Information Functions/QueryPerformanceFrequency.ahk)
 
