@@ -10,6 +10,14 @@ AHK --> DllCall --> WinAPI
 ### File Management Functions
 * [DeleteFile](src/File Management Functions/DeleteFile.ahk)
 
+### IP Helper Functions
+* [GetIpStatistics](src/IP Helper Functions/GetIpStatistics.ahk)
+* [GetIpStatisticsEx](src/IP Helper Functions/GetIpStatisticsEx.ahk)
+* [GetTcpStatistics](src/IP Helper Functions/GetTcpStatistics.ahk)
+* [GetTcpStatisticsEx](src/IP Helper Functions/GetTcpStatisticsEx.ahk)
+* [GetUdpStatistics](src/IP Helper Functions/GetUdpStatistics.ahk)
+* [GetUdpStatisticsEx](src/IP Helper Functions/GetUdpStatisticsEx.ahk)
+
 ### Memory Management Functions
 * [GetPhysicallyInstalledSystemMemory](src/Memory Management Functions/GetPhysicallyInstalledSystemMemory.ahk)
 * [GlobalMemoryStatusEx](src/Memory Management Functions/GlobalMemoryStatusEx.ahk)
