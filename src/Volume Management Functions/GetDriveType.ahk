@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: GetDriveType
+﻿; =================================================================================================
+; Function......: GetDriveType
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: GetDriveTypeW (Unicode) and GetDriveTypeA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetDriveType function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx
+; AHK =============================================================================================
 GetDriveType(lpRootPathName)
 {
     return, DllCall("kernel32.dll\GetDriveType", "Str", lpRootPathName)

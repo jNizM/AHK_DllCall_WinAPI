@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: GetDiskFreeSpaceEx
+﻿; =================================================================================================
+; Function......: GetDiskFreeSpaceEx
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: GetDiskFreeSpaceExW (Unicode) and GetDiskFreeSpaceExA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetDiskFreeSpaceEx function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/aa364937(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364937(v=vs.85).aspx
+; AHK =============================================================================================
 GetDiskFreeSpaceEx(lpDirectoryName)
 {
     VarSetCapacity(lpFreeBytesAvailable, 8)

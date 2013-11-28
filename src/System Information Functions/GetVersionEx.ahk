@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: GetVersionEx
+﻿; =================================================================================================
+; Function......: GetVersionEx
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: GetVersionExW (Unicode) and GetVersionExA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetVersionEx function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/ms724451(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724451(v=vs.85).aspx
+; AHK =============================================================================================
 GetVersionEx()
 {
     static OSVEREX, init := VarSetCapacity(OSVEREX, 284, 0) && NumPut(284, OSVEREX, "UInt")

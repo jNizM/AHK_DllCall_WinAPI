@@ -1,17 +1,19 @@
-﻿; ===================================================================================
-; Name..........: LockWorkStation
+﻿; =================================================================================================
+; Function......: LockWorkStation
+; DLL...........: User32.dll
+; Library.......: User32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: LockWorkStation function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/aa376875(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa376875(v=vs.85).aspx
+; AHK =============================================================================================
 LockWorkStation()
 {
-    return, DllCall("user32.dll\LockWorkStation")
+    DllCall("user32.dll\LockWorkStation")
 }
 ; ===================================================================================
 
-MsgBox, % LockWorkStation()
+LockWorkStation()
 
 
 

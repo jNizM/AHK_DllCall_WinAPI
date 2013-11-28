@@ -1,18 +1,23 @@
-﻿; ===================================================================================
-; Name..........: Sleep
+﻿; =================================================================================================
+; Function......: Sleep
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: Sleep function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/ms686298(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686298(v=vs.85).aspx
+; AHK =============================================================================================
 Sleep(dwMilliseconds)
 {
-    return, DllCall("kernel32.dll\Sleep", "UInt", dwMilliseconds)
+    DllCall("kernel32.dll\Sleep", "UInt", dwMilliseconds)
 }
 ; ===================================================================================
 
+DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
+DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", S)
 Sleep(2000)
-MsgBox, % "Sleep: 2000 ms"
+DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", E)
+MsgBox, % (E - S) / F
 
 
 

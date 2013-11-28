@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: QueryPerformanceFrequency
+﻿; =================================================================================================
+; Function......: QueryPerformanceFrequency
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: QueryPerformanceFrequency function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/ms644905(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms644905(v=vs.85).aspx
+; AHK =============================================================================================
 QueryPerformanceFrequency()
 {
     if DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", lpFrequency)

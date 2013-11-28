@@ -1,17 +1,20 @@
-﻿; ===================================================================================
-; Name..........: DeleteFile
+﻿; =================================================================================================
+; Function......: DeleteFile
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: DeleteFileW (Unicode) and DeleteFileA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: DeleteFile function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx
+; AHK =============================================================================================
 DeleteFile(lpFileName)
 {
-    return, DllCall("kernel32.dll\DeleteFile", "UInt", &lpFileName)
+    DllCall("kernel32.dll\DeleteFile", "UInt", &lpFileName)
 }
+
 ; ===================================================================================
 
-MsgBox, % DeleteFile("C:\Temp\TestFile.txt")
+DeleteFile("C:\Temp\TestFile.txt")
 
 
 

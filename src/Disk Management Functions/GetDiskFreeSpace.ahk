@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: GetDiskFreeSpace
+﻿; =================================================================================================
+; Function......: GetDiskFreeSpace
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: GetDiskFreeSpaceW (Unicode) and GetDiskFreeSpaceA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetDiskFreeSpace function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/aa364935(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364935(v=vs.85).aspx
+; AHK =============================================================================================
 GetDiskFreeSpace(lpRootPathName)
 {
     if DllCall("kernel32.dll\GetDiskFreeSpace"

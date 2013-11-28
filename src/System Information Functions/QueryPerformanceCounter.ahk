@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: QueryPerformanceCounter
+﻿; =================================================================================================
+; Function......: QueryPerformanceCounter
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: QueryPerformanceCounter function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/ms644904(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms644904(v=vs.85).aspx
+; AHK =============================================================================================
 QueryPerformanceCounter()
 {
     if DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", lpPerformanceCount)

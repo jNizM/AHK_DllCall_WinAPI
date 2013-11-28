@@ -1,19 +1,21 @@
-﻿; ===================================================================================
-; Name..........: ZwDelayExecution
+﻿; =================================================================================================
+; Function......: ZwDelayExecution
+; DLL...........: ntdll.dll
+; Library.......:
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: ZwDelayExecution function
-;                 
-; AHK ===============================================================================
+; Links.........:
+; AHK =============================================================================================
 ZwDelayExecution(Alertable, Interval)
 {
-    return, DllCall("ntdll.dll\ZwDelayExecution", "Int", Alertable, "Int64*", -1 * (Interval * 10))
+    DllCall("ntdll.dll\ZwDelayExecution", "Int", Alertable, "Int64*", -1 * (Interval * 10))
 }
 ; ===================================================================================
 
 DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
 DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", S)
-ZwDelayExecution(0, 1000000)
+ZwDelayExecution(0, 2000000)
 DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", E)
 MsgBox, % (E - S) / F
 

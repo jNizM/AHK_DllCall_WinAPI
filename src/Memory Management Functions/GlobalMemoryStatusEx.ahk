@@ -1,13 +1,15 @@
-﻿; ===================================================================================
-; Name..........: GlobalMemoryStatusEx
+﻿; =================================================================================================
+; Function......: GlobalMemoryStatusEx
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GlobalMemoryStatusEx function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx
+; AHK =============================================================================================
 GlobalMemoryStatusEx()
 {
-	static MEMORYSTATUSEX, init := VarSetCapacity(MEMORYSTATUSEX, 64, 0) && NumPut(64, MEMORYSTATUSEX, "UInt")
+    static MEMORYSTATUSEX, init := VarSetCapacity(MEMORYSTATUSEX, 64, 0) && NumPut(64, MEMORYSTATUSEX, "UInt")
     if (DllCall("kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
     {
 		return, { 0 : NumGet(MEMORYSTATUSEX,  0, "UInt"),  1 : NumGet(MEMORYSTATUSEX,  4, "UInt")

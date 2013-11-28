@@ -1,15 +1,17 @@
-﻿; ===================================================================================
-; Name..........: GetVersion
+﻿; =================================================================================================
+; Function......: GetVersion
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetVersion function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439(v=vs.85).aspx
+; AHK =============================================================================================
 GetVersion(Version = 1)
 {
-    return, (Version = 1) ? LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-          : (Version = 2) ? HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-          : (Version = 3) ? HIWORD(DllCall("Kernel32.dll\GetVersion")) : ""
+    return, (Version = 1) ? LOBYTE(LOWORD(DllCall("kernel32.dll\GetVersion")))
+          : (Version = 2) ? HIBYTE(LOWORD(DllCall("kernel32.dll\GetVersion")))
+          : (Version = 3) ? HIWORD(DllCall("kernel32.dll\GetVersion")) : ""
 }
 LOWORD(l)
 {
@@ -34,9 +36,9 @@ MsgBox, % "Major:`t" GetVersion(1) "`n"
         . "Build:`t" GetVersion(3)
 
 
-MajorVersion := DllCall("Kernel32.dll\GetVersion") & 0xff
-MinorVersion := DllCall("Kernel32.dll\GetVersion") >> 8 & 0xff
-BuildVersion := DllCall("Kernel32.dll\GetVersion") >> 16 & 0xffff
+MajorVersion := DllCall("kernel32.dll\GetVersion") & 0xff
+MinorVersion := DllCall("kernel32.dll\GetVersion") >> 8 & 0xff
+BuildVersion := DllCall("kernel32.dll\GetVersion") >> 16 & 0xffff
 
 MsgBox, % MajorVersion "." MinorVersion "." BuildVersion
 

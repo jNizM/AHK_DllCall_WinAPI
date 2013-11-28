@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: GetCurrentProcessId
+﻿; =================================================================================================
+; Function......: GetCurrentProcessId
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetCurrentProcessId function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/ms683180(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683180(v=vs.85).aspx
+; AHK =============================================================================================
 GetCurrentProcessId()
 {
     return, DllCall("kernel32.dll\GetCurrentProcessId")

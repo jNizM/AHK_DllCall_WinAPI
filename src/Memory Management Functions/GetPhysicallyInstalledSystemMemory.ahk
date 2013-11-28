@@ -1,10 +1,12 @@
-﻿; ===================================================================================
-; Name..........: GetPhysicallyInstalledSystemMemory
+﻿; =================================================================================================
+; Function......: GetPhysicallyInstalledSystemMemory
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: GetPhysicallyInstalledSystemMemory function
-;                 http://msdn.microsoft.com/en-us/library/windows/desktop/cc300158(v=vs.85).aspx
-; AHK ===============================================================================
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/cc300158(v=vs.85).aspx
+; AHK =============================================================================================
 GetPhysicallyInstalledSystemMemory()
 {
     if DllCall("kernel32.dll\GetPhysicallyInstalledSystemMemory", "UInt64*", TotalMemoryInKilobytes)
