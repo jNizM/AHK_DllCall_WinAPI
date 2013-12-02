@@ -9,11 +9,13 @@
 ; AHK =============================================================================================
 SetPhysicalCursorPos(X, Y)
 {
-    DllCall("user32.dll\SetPhysicalCursorPos", "Int", X, "Int", Y)
+    DllCall("User32.dll\SetPhysicalCursorPos", "Int", X, "Int", Y)
 }
 ; ===================================================================================
 
 SetPhysicalCursorPos(750, 500)
+
+
 
 
 

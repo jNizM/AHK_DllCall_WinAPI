@@ -9,11 +9,13 @@
 ; AHK =============================================================================================
 GetTickCount64()
 {
-    return, DllCall("kernel32.dll\GetTickCount64")
+    return, DllCall("Kernel32.dll\GetTickCount64")
 }
 ; ===================================================================================
 
 MsgBox, % GetTickCount64()
+
+
 
 
 

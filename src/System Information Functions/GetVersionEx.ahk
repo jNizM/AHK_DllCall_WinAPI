@@ -10,7 +10,7 @@
 GetVersionEx()
 {
     static OSVEREX, init := VarSetCapacity(OSVEREX, 284, 0) && NumPut(284, OSVEREX, "UInt")
-    if (DllCall("kernel32.dll\GetVersionEx", "Ptr", &OSVEREX))
+    if (DllCall("Kernel32.dll\GetVersionEx", "Ptr", &OSVEREX))
     {
         return, { 0 : NumGet(OSVEREX,   0, "UInt"),   1 : NumGet(OSVEREX,       4, "UInt")
                 , 2 : NumGet(OSVEREX,   8, "UInt"),   3 : NumGet(OSVEREX,      12, "UInt")
@@ -21,20 +21,20 @@ GetVersionEx()
 }
 ; ===================================================================================
 
-GVEx := GetVersionEx()
+GetVersionEx := GetVersionEx()
 
 MsgBox, % "GetVersionEx function`n"
         . "OSVERSIONINFOEX structure`n`n"
-        . "OSVersionInfoSize:`t`t"     GVEx[0] "`n"
-        . "MajorVersion:`t`t"          GVEx[1] "`n"
-        . "MinorVersion:`t`t"          GVEx[2] "`n"
-        . "BuildNumber:`t`t"           GVEx[3] "`n"
-        . "PlatformId:`t`t"            GVEx[4] "`n"
-        . "CSDVersion:`t`t"            GVEx[5] "`n"
-        . "ServicePackMajor:`t`t"      GVEx[6] "`n"
-        . "ServicePackMinor:`t`t"      GVEx[7] "`n"
-        . "SuiteMask:`t`t"             GVEx[8] "`n"
-        . "ProductType:`t`t"           GVEx[9]
+        . "OSVersionInfoSize:`t`t"     GetVersionEx[0]   "`n"
+        . "MajorVersion:`t`t"          GetVersionEx[1]   "`n"
+        . "MinorVersion:`t`t"          GetVersionEx[2]   "`n"
+        . "BuildNumber:`t`t"           GetVersionEx[3]   "`n"
+        . "PlatformId:`t`t"            GetVersionEx[4]   "`n"
+        . "CSDVersion:`t`t"            GetVersionEx[5]   "`n"
+        . "ServicePackMajor:`t`t"      GetVersionEx[6]   "`n"
+        . "ServicePackMinor:`t`t"      GetVersionEx[7]   "`n"
+        . "SuiteMask:`t`t"             GetVersionEx[8]   "`n"
+        . "ProductType:`t`t"           GetVersionEx[9]
 
 
 
@@ -50,7 +50,7 @@ typedef struct _OSVERSIONINFOEX {
     DWORD dwMinorVersion;                         //  4 =>   8        UInt
     DWORD dwBuildNumber;                          //  4 =>  12        UInt
     DWORD dwPlatformId;                           //  4 =>  16        UInt
-    TCHAR szCSDVersion[128];                      //  4 => 128        (A_IsUnicode) ? Short : Char
+    TCHAR szCSDVersion[128];                      //  4 => 128        UTF-16
     WORD  wServicePackMajor;                      //  2 => 276        UShort
     WORD  wServicePackMinor;                      //  2 => 278        UShort
     WORD  wSuiteMask;                             //  2 => 280        UShort

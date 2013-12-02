@@ -9,9 +9,9 @@
 ; AHK =============================================================================================
 GetVersion(Version = 1)
 {
-    return, (Version = 1) ? LOBYTE(LOWORD(DllCall("kernel32.dll\GetVersion")))
-          : (Version = 2) ? HIBYTE(LOWORD(DllCall("kernel32.dll\GetVersion")))
-          : (Version = 3) ? HIWORD(DllCall("kernel32.dll\GetVersion")) : ""
+    return, (Version = 1) ? LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
+          : (Version = 2) ? HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
+          : (Version = 3) ? HIWORD(DllCall("Kernel32.dll\GetVersion")) : ""
 }
 LOWORD(l)
 {
@@ -31,16 +31,18 @@ HIBYTE(w)
 }
 ; ===================================================================================
 
-MsgBox, % "Major:`t" GetVersion(1) "`n"
-        . "Minor:`t" GetVersion(2) "`n"
-        . "Build:`t" GetVersion(3)
+MsgBox, % "Major:`t"     GetVersion(1)   "`n"
+        . "Minor:`t"     GetVersion(2)   "`n"
+        . "Build:`t"     GetVersion(3)
 
 
-MajorVersion := DllCall("kernel32.dll\GetVersion") & 0xff
-MinorVersion := DllCall("kernel32.dll\GetVersion") >> 8 & 0xff
-BuildVersion := DllCall("kernel32.dll\GetVersion") >> 16 & 0xffff
+MajorVersion := DllCall("Kernel32.dll\GetVersion") & 0xff
+MinorVersion := DllCall("Kernel32.dll\GetVersion") >> 8 & 0xff
+BuildVersion := DllCall("Kernel32.dll\GetVersion") >> 16 & 0xffff
 
 MsgBox, % MajorVersion "." MinorVersion "." BuildVersion
+
+
 
 
 

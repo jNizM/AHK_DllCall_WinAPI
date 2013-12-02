@@ -1,6 +1,6 @@
 ﻿; =================================================================================================
 ; Function......: ZwDelayExecution
-; DLL...........: ntdll.dll
+; DLL...........: Ntdll.dll
 ; Library.......:
 ; U/ANSI........:
 ; Author........: jNizM
@@ -9,21 +9,23 @@
 ; AHK =============================================================================================
 ZwDelayExecution(Alertable, Interval)
 {
-    DllCall("ntdll.dll\ZwDelayExecution", "UInt ", Alertable, "Int64*", Interval)
+    DllCall("Ntdll.dll\ZwDelayExecution", "UChar", Alertable, "Int64*", Interval)
 }
 ; ===================================================================================
 
-DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
-DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", S)
+DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
+DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", S)
 ZwDelayExecution(0, -2000000)
-DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", E)
+DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", E)
 MsgBox, % (E - S) / F
+
+
 
 
 
 /* C++ ==============================================================================
 NTSYSAPI NTSTATUS NTAPI ZwDelayExecution(
-    _In_  BOOLEAN Alertable,
-    _In_  LARGE_INTEGER * Interval 
+    _In_  BOOLEAN Alertable,              // UChar
+    _In_  LARGE_INTEGER * Interval        // Int64*
 );
 ================================================================================== */

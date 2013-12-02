@@ -9,7 +9,7 @@
 ; AHK =============================================================================================
 DeleteFile(lpFileName)
 {
-    DllCall("kernel32.dll\DeleteFile", "UInt", &lpFileName)
+    DllCall("Kernel32.dll\DeleteFile", "Str", lpFileName)
 }
 
 ; ===================================================================================
@@ -18,8 +18,10 @@ DeleteFile("C:\Temp\TestFile.txt")
 
 
 
+
+
 /* C++ ==============================================================================
 BOOL WINAPI DeleteFile(
-    _In_  LPCTSTR lpFileName
+    _In_  LPCTSTR lpFileName        // Str
 );
 ================================================================================== */

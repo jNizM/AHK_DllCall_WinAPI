@@ -6,14 +6,16 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms649035(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 CloseClipboard()
 {
-	DllCall("user32.dll\CloseClipboard")
+    DllCall("User32.dll\CloseClipboard")
 }
 ; ===================================================================================
 
 CloseClipboard()
+
+
 
 
 

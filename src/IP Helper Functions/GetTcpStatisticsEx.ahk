@@ -20,25 +20,25 @@ GetTcpStatisticsEx()
 }
 ; ===================================================================================
 
-GTCPSEx := GetTcpStatisticsEx()
+GetTcpStatisticsEx := GetTcpStatisticsEx()
 
 MsgBox, % "GetTcpStatistics function`n"
         . "MIB_TCPSTATS structure`n`n"
-        . "RtoAlgorithm:`t`t"          GTCPSEx[0]  "`n"
-        . "RtoMin:`t`t`t"              GTCPSEx[1]  "`n"
-        . "RtoMax:`t`t`t"              GTCPSEx[2]  "`n"
-        . "MaxConn:`t`t`t"             GTCPSEx[3]  "`n"
-        . "ActiveOpens:`t`t"           GTCPSEx[4]  "`n"
-        . "PassiveOpens:`t`t"          GTCPSEx[5]  "`n"
-        . "AttemptFails:`t`t"          GTCPSEx[6]  "`n"
-        . "EstabResets:`t`t"           GTCPSEx[7]  "`n"
-        . "CurrEstab:`t`t`t"           GTCPSEx[8]  "`n"
-        . "InSegs:`t`t`t"              GTCPSEx[9]  "`n"
-        . "OutSegs:`t`t`t"             GTCPSEx[10] "`n"
-        . "RetransSegs:`t`t"           GTCPSEx[11] "`n"
-        . "InErrs:`t`t`t"              GTCPSEx[12] "`n"
-        . "OutRsts:`t`t`t"             GTCPSEx[13] "`n"
-        . "NumConns:`t`t"              GTCPSEx[14]
+        . "RtoAlgorithm:`t`t"     GetTcpStatisticsEx[0]    "`n"
+        . "RtoMin:`t`t`t"         GetTcpStatisticsEx[1]    "`n"
+        . "RtoMax:`t`t`t"         GetTcpStatisticsEx[2]    "`n"
+        . "MaxConn:`t`t`t"        GetTcpStatisticsEx[3]    "`n"
+        . "ActiveOpens:`t`t"      GetTcpStatisticsEx[4]    "`n"
+        . "PassiveOpens:`t`t"     GetTcpStatisticsEx[5]    "`n"
+        . "AttemptFails:`t`t"     GetTcpStatisticsEx[6]    "`n"
+        . "EstabResets:`t`t"      GetTcpStatisticsEx[7]    "`n"
+        . "CurrEstab:`t`t`t"      GetTcpStatisticsEx[8]    "`n"
+        . "InSegs:`t`t`t"         GetTcpStatisticsEx[9]    "`n"
+        . "OutSegs:`t`t`t"        GetTcpStatisticsEx[10]   "`n"
+        . "RetransSegs:`t`t"      GetTcpStatisticsEx[11]   "`n"
+        . "InErrs:`t`t`t"         GetTcpStatisticsEx[12]   "`n"
+        . "OutRsts:`t`t`t"        GetTcpStatisticsEx[13]   "`n"
+        . "NumConns:`t`t"         GetTcpStatisticsEx[14]
 
 
 

@@ -23,33 +23,35 @@ GetIpStatisticsEx()
 }
 ; ===================================================================================
 
-GIPSEx := GetIpStatisticsEx()
+GetIpStatisticsEx := GetIpStatisticsEx()
 
 MsgBox, % "GetIpStatistics function`n"
         . "MIB_IPSTATS structure`n`n"
-        . "Forwarding:`t`t"            GIPSEx[0]  "`n"
-        . "DefaultTTL:`t`t"            GIPSEx[1]  "`n"
-        . "InReceives:`t`t"            GIPSEx[2]  "`n"
-        . "InHdrErrors:`t`t"           GIPSEx[3]  "`n"
-        . "InAddrErrors:`t`t"          GIPSEx[4]  "`n"
-        . "ForwDatagrams:`t`t"         GIPSEx[5]  "`n"
-        . "InUnknownProtos:`t`t"       GIPSEx[6]  "`n"
-        . "InDiscards:`t`t"            GIPSEx[7]  "`n"
-        . "InDelivers:`t`t`t"          GIPSEx[8]  "`n"
-        . "OutRequests:`t`t"           GIPSEx[9]  "`n"
-        . "RoutingDiscards:`t`t"       GIPSEx[10] "`n"
-        . "OutDiscards:`t`t"           GIPSEx[11] "`n"
-        . "OutNoRoutes:`t`t"           GIPSEx[12] "`n"
-        . "ReasmTimeout:`t`t"          GIPSEx[13] "`n"
-        . "ReasmReqds:`t`t"            GIPSEx[14] "`n"
-        . "ReasmOks:`t`t"              GIPSEx[15] "`n"
-        . "ReasmFails:`t`t"            GIPSEx[16] "`n"
-        . "FragOks:`t`t`t"             GIPSEx[17] "`n"
-        . "FragFails:`t`t`t"           GIPSEx[18] "`n"
-        . "FragCreates:`t`t"           GIPSEx[19] "`n"
-        . "NumIf:`t`t`t"               GIPSEx[20] "`n"
-        . "NumAddr:`t`t"               GIPSEx[21] "`n"
-        . "NumRoutes:`t`t"             GIPSEx[22]
+        . "Forwarding:`t`t"          GetIpStatisticsEx[0]    "`n"
+        . "DefaultTTL:`t`t"          GetIpStatisticsEx[1]    "`n"
+        . "InReceives:`t`t"          GetIpStatisticsEx[2]    "`n"
+        . "InHdrErrors:`t`t"         GetIpStatisticsEx[3]    "`n"
+        . "InAddrErrors:`t`t"        GetIpStatisticsEx[4]    "`n"
+        . "ForwDatagrams:`t`t"       GetIpStatisticsEx[5]    "`n"
+        . "InUnknownProtos:`t`t"     GetIpStatisticsEx[6]    "`n"
+        . "InDiscards:`t`t"          GetIpStatisticsEx[7]    "`n"
+        . "InDelivers:`t`t`t"        GetIpStatisticsEx[8]    "`n"
+        . "OutRequests:`t`t"         GetIpStatisticsEx[9]    "`n"
+        . "RoutingDiscards:`t`t"     GetIpStatisticsEx[10]   "`n"
+        . "OutDiscards:`t`t"         GetIpStatisticsEx[11]   "`n"
+        . "OutNoRoutes:`t`t"         GetIpStatisticsEx[12]   "`n"
+        . "ReasmTimeout:`t`t"        GetIpStatisticsEx[13]   "`n"
+        . "ReasmReqds:`t`t"          GetIpStatisticsEx[14]   "`n"
+        . "ReasmOks:`t`t"            GetIpStatisticsEx[15]   "`n"
+        . "ReasmFails:`t`t"          GetIpStatisticsEx[16]   "`n"
+        . "FragOks:`t`t`t"           GetIpStatisticsEx[17]   "`n"
+        . "FragFails:`t`t`t"         GetIpStatisticsEx[18]   "`n"
+        . "FragCreates:`t`t"         GetIpStatisticsEx[19]   "`n"
+        . "NumIf:`t`t`t"             GetIpStatisticsEx[20]   "`n"
+        . "NumAddr:`t`t"             GetIpStatisticsEx[21]   "`n"
+        . "NumRoutes:`t`t"           GetIpStatisticsEx[22]
+
+
 
 
 

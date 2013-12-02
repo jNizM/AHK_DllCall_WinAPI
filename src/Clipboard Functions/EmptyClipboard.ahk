@@ -6,25 +6,28 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms649037(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 EmptyClipboard()
 {
-    DllCall("user32.dll\EmptyClipboard")
+    DllCall("User32.dll\EmptyClipboard")
 }
 ; ===================================================================================
 
-OpenClipboard(0)
+OpenClipboard()
 EmptyClipboard()
 CloseClipboard()
 
-OpenClipboard(hWndNewOwner)
+
+OpenClipboard(hWndNewOwner = 0)
 {
-	DllCall("user32.dll\OpenClipboard", "Ptr", hWndNewOwner)
+    DllCall("User32.dll\OpenClipboard", "Ptr", hWndNewOwner)
 }
 CloseClipboard()
 {
-	DllCall("user32.dll\CloseClipboard")
+    DllCall("User32.dll\CloseClipboard")
 }
+
+
 
 
 

@@ -9,8 +9,8 @@
 ; AHK =============================================================================================
 GetDiskFreeSpace(lpRootPathName)
 {
-    if DllCall("kernel32.dll\GetDiskFreeSpace"
-                , "Str", lpRootPathName
+    if DllCall("Kernel32.dll\GetDiskFreeSpace"
+                , "Str",   lpRootPathName
                 , "UInt*", lpSectorsPerCluster
                 , "UInt*", lpBytesPerSector
                 , "UInt*", lpNumberOfFreeClusters
@@ -28,12 +28,14 @@ MsgBox, % GetDiskFreeSpace("C:\") " Bytes`n"
 
 
 
+
+
 /* C++ ==============================================================================
 BOOL WINAPI GetDiskFreeSpace(
-    _In_   LPCTSTR lpRootPathName,
-    _Out_  LPDWORD lpSectorsPerCluster,
-    _Out_  LPDWORD lpBytesPerSector,
-    _Out_  LPDWORD lpNumberOfFreeClusters,
-    _Out_  LPDWORD lpTotalNumberOfClusters
+    _In_   LPCTSTR lpRootPathName,                // Str
+    _Out_  LPDWORD lpSectorsPerCluster,           // UInt*
+    _Out_  LPDWORD lpBytesPerSector,              // UInt*
+    _Out_  LPDWORD lpNumberOfFreeClusters,        // UInt*
+    _Out_  LPDWORD lpTotalNumberOfClusters        // UInt*
 );
 ================================================================================== */

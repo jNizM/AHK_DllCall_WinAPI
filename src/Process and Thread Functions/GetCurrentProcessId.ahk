@@ -9,11 +9,13 @@
 ; AHK =============================================================================================
 GetCurrentProcessId()
 {
-    return, DllCall("kernel32.dll\GetCurrentProcessId")
+    return, DllCall("Kernel32.dll\GetCurrentProcessId")
 }
 ; ===================================================================================
 
 MsgBox, % GetCurrentProcessId()
+
+
 
 
 

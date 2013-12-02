@@ -9,20 +9,22 @@
 ; AHK =============================================================================================
 Sleep(dwMilliseconds)
 {
-    DllCall("kernel32.dll\Sleep", "UInt", dwMilliseconds)
+    DllCall("Kernel32.dll\Sleep", "UInt", dwMilliseconds)
 }
 ; ===================================================================================
 
-DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
-DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", S)
+DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
+DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", S)
 Sleep(2000)
-DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", E)
+DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", E)
 MsgBox, % (E - S) / F
+
+
 
 
 
 /* C++ ==============================================================================
 VOID WINAPI Sleep(
-    _In_  DWORD dwMilliseconds
+    _In_  DWORD dwMilliseconds        // UInt
 );
 ================================================================================== */

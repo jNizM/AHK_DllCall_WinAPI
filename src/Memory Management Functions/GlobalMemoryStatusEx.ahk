@@ -10,7 +10,7 @@
 GlobalMemoryStatusEx()
 {
     static MEMORYSTATUSEX, init := VarSetCapacity(MEMORYSTATUSEX, 64, 0) && NumPut(64, MEMORYSTATUSEX, "UInt")
-    if (DllCall("kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
+    if (DllCall("Kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
     {
 		return, { 0 : NumGet(MEMORYSTATUSEX,  0, "UInt"),  1 : NumGet(MEMORYSTATUSEX,  4, "UInt")
 				, 2 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 3 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
@@ -21,19 +21,21 @@ GlobalMemoryStatusEx()
 }
 ; ===================================================================================
 
-GMSEx := GlobalMemoryStatusEx()
+GlobalMemoryStatusEx := GlobalMemoryStatusEx()
 
 MsgBox, % "GlobalMemoryStatusEx function`n"
         . "MEMORYSTATUSEX structure`n`n"
-        . "Lenght:`t`t`t"              GMSEx[0] "`n`n"
-        . "MemoryLoad:`t`t"            GMSEx[1] " %`n`n"
-        . "TotalPhys:`t`t`t"           GMSEx[2] " bytes`n"
-        . "AvailPhys:`t`t`t"           GMSEx[3] " bytes`n`n"
-        . "TotalPageFile:`t`t"         GMSEx[4] " bytes`n"
-        . "AvailPageFile:`t`t"         GMSEx[5] " bytes`n`n"
-        . "TotalVirtual:`t`t"          GMSEx[6] " bytes`n"
-        . "AvailVirtual:`t`t"          GMSEx[7] " bytes`n`n"
-        . "AvailExtendedVirtual:`t`t"  GMSEx[8]
+        . "Lenght:`t`t`t"                 GlobalMemoryStatusEx[0]   "`n`n"
+        . "MemoryLoad:`t`t"               GlobalMemoryStatusEx[1]   " %`n`n"
+        . "TotalPhys:`t`t`t"              GlobalMemoryStatusEx[2]   " bytes`n"
+        . "AvailPhys:`t`t`t"              GlobalMemoryStatusEx[3]   " bytes`n`n"
+        . "TotalPageFile:`t`t"            GlobalMemoryStatusEx[4]   " bytes`n"
+        . "AvailPageFile:`t`t"            GlobalMemoryStatusEx[5]   " bytes`n`n"
+        . "TotalVirtual:`t`t"             GlobalMemoryStatusEx[6]   " bytes`n"
+        . "AvailVirtual:`t`t"             GlobalMemoryStatusEx[7]   " bytes`n`n"
+        . "AvailExtendedVirtual:`t`t"     GlobalMemoryStatusEx[8]
+
+
 
 
 

@@ -9,11 +9,13 @@
 ; AHK =============================================================================================
 GetCurrentThreadId()
 {
-    return, DllCall("kernel32.dll\GetCurrentThreadId")
+    return, DllCall("Kernel32.dll\GetCurrentThreadId")
 }
 ; ===================================================================================
 
 MsgBox, % GetCurrentThreadId()
+
+
 
 
 

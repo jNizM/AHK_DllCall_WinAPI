@@ -19,25 +19,27 @@ GetTcpStatistics()
 }
 ; ===================================================================================
 
-GTCPS := GetTcpStatistics()
+GetTcpStatistics := GetTcpStatistics()
 
 MsgBox, % "GetTcpStatistics function`n"
         . "MIB_TCPSTATS structure`n`n"
-        . "RtoAlgorithm:`t`t"          GTCPS[0]  "`n"
-        . "RtoMin:`t`t`t"              GTCPS[1]  "`n"
-        . "RtoMax:`t`t`t"              GTCPS[2]  "`n"
-        . "MaxConn:`t`t`t"             GTCPS[3]  "`n"
-        . "ActiveOpens:`t`t"           GTCPS[4]  "`n"
-        . "PassiveOpens:`t`t"          GTCPS[5]  "`n"
-        . "AttemptFails:`t`t"          GTCPS[6]  "`n"
-        . "EstabResets:`t`t"           GTCPS[7]  "`n"
-        . "CurrEstab:`t`t`t"           GTCPS[8]  "`n"
-        . "InSegs:`t`t`t"              GTCPS[9]  "`n"
-        . "OutSegs:`t`t`t"             GTCPS[10] "`n"
-        . "RetransSegs:`t`t"           GTCPS[11] "`n"
-        . "InErrs:`t`t`t"              GTCPS[12] "`n"
-        . "OutRsts:`t`t`t"             GTCPS[13] "`n"
-        . "NumConns:`t`t"              GTCPS[14]
+        . "RtoAlgorithm:`t`t"     GetTcpStatistics[0]    "`n"
+        . "RtoMin:`t`t`t"         GetTcpStatistics[1]    "`n"
+        . "RtoMax:`t`t`t"         GetTcpStatistics[2]    "`n"
+        . "MaxConn:`t`t`t"        GetTcpStatistics[3]    "`n"
+        . "ActiveOpens:`t`t"      GetTcpStatistics[4]    "`n"
+        . "PassiveOpens:`t`t"     GetTcpStatistics[5]    "`n"
+        . "AttemptFails:`t`t"     GetTcpStatistics[6]    "`n"
+        . "EstabResets:`t`t"      GetTcpStatistics[7]    "`n"
+        . "CurrEstab:`t`t`t"      GetTcpStatistics[8]    "`n"
+        . "InSegs:`t`t`t"         GetTcpStatistics[9]    "`n"
+        . "OutSegs:`t`t`t"        GetTcpStatistics[10]   "`n"
+        . "RetransSegs:`t`t"      GetTcpStatistics[11]   "`n"
+        . "InErrs:`t`t`t"         GetTcpStatistics[12]   "`n"
+        . "OutRsts:`t`t`t"        GetTcpStatistics[13]   "`n"
+        . "NumConns:`t`t"         GetTcpStatistics[14]
+
+
 
 
 

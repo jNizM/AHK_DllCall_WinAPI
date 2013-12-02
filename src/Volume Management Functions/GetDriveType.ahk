@@ -9,7 +9,7 @@
 ; AHK =============================================================================================
 GetDriveType(lpRootPathName)
 {
-    return, DllCall("kernel32.dll\GetDriveType", "Str", lpRootPathName)
+    return, DllCall("Kernel32.dll\GetDriveType", "Str", lpRootPathName)
 }
 ; ===================================================================================
 
@@ -17,8 +17,10 @@ MsgBox, % GetDriveType("C:\")
 
 
 
+
+
 /* C++ ==============================================================================
 UINT WINAPI GetDriveType(
-    _In_opt_  LPCTSTR lpRootPathName
+    _In_opt_  LPCTSTR lpRootPathName        // Str
 );
 ================================================================================== */

@@ -9,35 +9,37 @@
 ; AHK =============================================================================================
 GetDiskFreeSpaceEx(lpDirectoryName)
 {
-    VarSetCapacity(lpFreeBytesAvailable, 8)
-    VarSetCapacity(lpTotalNumberOfBytes, 8)
-    VarSetCapacity(lpTotalNumberOfFreeBytes, 8)
-    if DllCall("kernel32.dll\GetDiskFreeSpaceEx"
-                , "Str", lpDirectoryName
-                , "UInt", &lpFreeBytesAvailable
-                , "UInt", &lpTotalNumberOfBytes
-                , "UInt", &lpTotalNumberOfFreeBytes)
+    VarSetCapacity(lpFreeBytesAvailable, 8, 0)
+    VarSetCapacity(lpTotalNumberOfBytes, 8, 0)
+    VarSetCapacity(lpTotalNumberOfFreeBytes, 8, 0)
+    if DllCall("Kernel32.dll\GetDiskFreeSpaceEx"
+                , "Str",    lpDirectoryName
+                , "Int64", &lpFreeBytesAvailable
+                , "Int64", &lpTotalNumberOfBytes
+                , "Int64", &lpTotalNumberOfFreeBytes)
     {
-        return, { 0 : Numget(lpFreeBytesAvailable, 0, "Int64")
-                , 1 : Numget(lpTotalNumberOfBytes, 0, "Int64")
-                , 2 : Numget(lpTotalNumberOfFreeBytes, 0, "Int64") }
+        return, { 0 : Numget(lpFreeBytesAvailable, 0, "Int64*")
+                , 1 : Numget(lpTotalNumberOfBytes, 0, "Int64*")
+                , 2 : Numget(lpTotalNumberOfFreeBytes, 0, "Int64*") }
     }
 }
 ; ===================================================================================
 
-GDFSEx := GetDiskFreeSpaceEx("C:\")
+GetDiskFreeSpaceEx := GetDiskFreeSpaceEx("C:\")
 
-MsgBox, % "FreeBytesAvailable:`t`t"     GDFSEx[0]   " Bytes`n"
-        . "TotalNumberOfBytes:`t"       GDFSEx[1]   " Bytes`n"
-        . "TotalNumberOfFreeBytes:`t"   GDFSEx[2]   " Bytes`n"
+MsgBox, % "FreeBytesAvailable:`t`t"       GetDiskFreeSpaceEx[0]   " Bytes`n"
+        . "TotalNumberOfBytes:`t"         GetDiskFreeSpaceEx[1]   " Bytes`n"
+        . "TotalNumberOfFreeBytes:`t"     GetDiskFreeSpaceEx[2]   " Bytes"
+
+
 
 
 
 /* C++ ==============================================================================
 BOOL WINAPI GetDiskFreeSpaceEx(
-    _In_opt_   LPCTSTR lpDirectoryName,
-    _Out_opt_  PULARGE_INTEGER lpFreeBytesAvailable,
-    _Out_opt_  PULARGE_INTEGER lpTotalNumberOfBytes,
-    _Out_opt_  PULARGE_INTEGER lpTotalNumberOfFreeBytes
+    _In_opt_   LPCTSTR lpDirectoryName,                        // Str
+    _Out_opt_  PULARGE_INTEGER lpFreeBytesAvailable,           // Int64*
+    _Out_opt_  PULARGE_INTEGER lpTotalNumberOfBytes,           // Int64*
+    _Out_opt_  PULARGE_INTEGER lpTotalNumberOfFreeBytes        // Int64*
 );
 ================================================================================== */

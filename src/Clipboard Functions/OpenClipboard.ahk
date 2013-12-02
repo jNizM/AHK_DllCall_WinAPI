@@ -6,19 +6,21 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms649048(v=vs.85).aspx
-; AHK =============================================================================================
-OpenClipboard(hWndNewOwner)
+; =================================================================================================
+OpenClipboard(hWndNewOwner = 0)
 {
-	DllCall("user32.dll\OpenClipboard", "Ptr", hWndNewOwner)
+    DllCall("User32.dll\OpenClipboard", "Ptr", hWndNewOwner)
 }
 ; ===================================================================================
 
-OpenClipboard(0)
+OpenClipboard()
+
+
 
 
 
 /* C++ ==============================================================================
 BOOL WINAPI OpenClipboard(
-    _In_opt_  HWND hWndNewOwner
+    _In_opt_  HWND hWndNewOwner        // Ptr
 );
 ================================================================================== */
