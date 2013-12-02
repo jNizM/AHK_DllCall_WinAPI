@@ -50,8 +50,12 @@ AHK --> DllCall --> WinAPI
 * [LockWorkStation](src/System Shutdown Functions/LockWorkStation.ahk)
 
 ### Time Functions
+* [GetLocalTime](src/Time Functions/GetLocalTime.ahk)
+* [GetSystemTime](src/Time Functions/GetSystemTime.ahk)
 * [GetTickCount](src/Time Functions/GetTickCount.ahk)
 * [GetTickCount64](src/Time Functions/GetTickCount64.ahk)
+* [SetLocalTime](src/Time Functions/SetLocalTime.ahk)
+* [SetSystemTime](src/Time Functions/SetSystemTime.ahk)
 
 ### Volume Management Functions
 * [GetDriveType](src/Volume Management Functions/GetDriveType.ahk)
