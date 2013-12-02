@@ -3,6 +3,18 @@ AHK --> DllCall --> WinAPI
 
 ## Current
 
+### Clipboard Functions
+* [CloseClipboard](src/Clipboard Functions/CloseClipboard.ahk)
+* [EmptyClipboard](src/Clipboard Functions/EmptyClipboard.ahk)
+* [OpenClipboard](src/Clipboard Functions/OpenClipboard.ahk)
+
+### Cursor Functions
+* [GetCursorInfo](src/Cursor Functions/GetCursorInfo.ahk)
+* [GetCursorPos](src/Cursor Functions/GetCursorPos.ahk)
+* [GetPhysicalCursorPos](src/Cursor Functions/GetPhysicalCursorPos.ahk)
+* [SetCursorPos](src/Cursor Functions/SetCursorPos.ahk)
+* [SetPhysicalCursorPos](src/Cursor Functions/SetPhysicalCursorPos.ahk)
+
 ### Disk Management Functions
 * [GetDiskFreeSpace](src/Disk Management Functions/GetDiskFreeSpace.ahk)
 * [GetDiskFreeSpaceEx](src/Disk Management Functions/GetDiskFreeSpaceEx.ahk)
@@ -24,6 +36,7 @@ AHK --> DllCall --> WinAPI
 
 ### Process and Thread Functions
 * [GetCurrentProcessId](src/Process and Thread Functions/GetCurrentProcessId.ahk)
+* [GetCurrentThreadId](src/Process and Thread Functions/GetCurrentThreadId.ahk)
 * [Sleep](src/Process and Thread Functions/Sleep.ahk)
 * [SleepEx](src/Process and Thread Functions/SleepEx.ahk)
 
