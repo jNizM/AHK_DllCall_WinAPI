@@ -35,8 +35,17 @@ AHK --> DllCall --> WinAPI
 * [GlobalMemoryStatusEx](src/Memory Management Functions/GlobalMemoryStatusEx.ahk)
 
 ### Process and Thread Functions
+* [GetActiveProcessorCount](src/Process and Thread Functions/GetActiveProcessorCount.ahk)
+* [GetActiveProcessorGroupCount](src/Process and Thread Functions/GetActiveProcessorGroupCount.ahk)
+* [GetCommandLine](src/Process and Thread Functions/GetCommandLine.ahk)
+* [GetCurrentProcess](src/Process and Thread Functions/GetCurrentProcess.ahk)
 * [GetCurrentProcessId](src/Process and Thread Functions/GetCurrentProcessId.ahk)
+* [GetCurrentProcessorNumber](src/Process and Thread Functions/GetCurrentProcessorNumber.ahk)
+* [GetCurrentThread](src/Process and Thread Functions/GetCurrentThread.ahk)
 * [GetCurrentThreadId](src/Process and Thread Functions/GetCurrentThreadId.ahk)
+* [GetMaximumProcessorCount](src/Process and Thread Functions/GetMaximumProcessorCount.ahk)
+* [GetMaximumProcessorGroupCount](src/Process and Thread Functions/GetMaximumProcessorGroupCount.ahk)
+* [GetProcessVersion](src/Process and Thread Functions/GetProcessVersion.ahk)
 * [Sleep](src/Process and Thread Functions/Sleep.ahk)
 * [SleepEx](src/Process and Thread Functions/SleepEx.ahk)
 
