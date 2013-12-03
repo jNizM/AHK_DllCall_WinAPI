@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa365959(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetIpStatistics()
 {
     static MIB_IPSTATS, init := VarSetCapacity(MIB_IPSTATS, 92, 0) && NumPut(92, MIB_IPSTATS, "UInt")
@@ -56,12 +56,12 @@ MsgBox, % "GetIpStatistics function`n"
 
 /* C++ ==============================================================================
 DWORD GetIpStatistics(
-    _Out_  PMIB_IPSTATS pStats        // UInt
+    _Out_  PMIB_IPSTATS pStats        // (92)             UInt
 );
 
 
 typedef struct _MIB_IPSTATS {
-    DWORD dwForwarding;               //  0 (92)          UInt
+    DWORD dwForwarding;               //  4 =>   0        UInt
     DWORD dwDefaultTTL;               //  4 =>   4        UInt
     DWORD dwInReceives;               //  4 =>   8        UInt
     DWORD dwInHdrErrors;              //  4 =>  12        UInt

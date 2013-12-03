@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/dd405485(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetActiveProcessorCount(GroupNumber)
 {
     return, DllCall("Kernel32.dll\GetActiveProcessorCount", "UShort", GroupNumber)

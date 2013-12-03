@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa366023(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetTcpStatisticsEx()
 {
     static MIB_TCPSTATS, init := VarSetCapacity(MIB_TCPSTATS, 60, 0) && NumPut(60, MIB_TCPSTATS, "UInt")
@@ -44,13 +44,13 @@ MsgBox, % "GetTcpStatistics function`n"
 
 /* C++ ==============================================================================
 DWORD GetTcpStatisticsEx(
-    _Out_  PMIB_TCPSTATS pStats,        // UInt
-    _In_   DWORD dwFamily               // UInt
+    _Out_  PMIB_TCPSTATS pStats,        // (60)             UInt
+    _In_   DWORD dwFamily               //                  UInt
 );
 
 
 typedef struct _MIB_TCPSTATS {
-    DWORD dwRtoAlgorithm;               //  0 (60)          UInt
+    DWORD dwRtoAlgorithm;               //  4 =>   0        UInt
     DWORD dwRtoMin;                     //  4 =>   4        UInt
     DWORD dwRtoMax;                     //  4 =>   8        UInt
     DWORD dwMaxConn;                    //  4 =>  12        UInt

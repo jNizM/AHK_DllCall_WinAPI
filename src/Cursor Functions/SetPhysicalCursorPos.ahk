@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa969465(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 SetPhysicalCursorPos(X, Y)
 {
     DllCall("User32.dll\SetPhysicalCursorPos", "Int", X, "Int", Y)

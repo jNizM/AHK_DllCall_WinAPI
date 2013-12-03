@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........:
-; AHK =============================================================================================
+; =================================================================================================
 ZwDelayExecution(Alertable, Interval)
 {
     DllCall("Ntdll.dll\ZwDelayExecution", "UChar", Alertable, "Int64*", Interval)

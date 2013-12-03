@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa969464(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetPhysicalCursorPos()
 {
     static POINT, init := VarSetCapacity(POINT, 8, 0) && NumPut(8, POINT, "Int")
@@ -30,12 +30,12 @@ MsgBox, % "GetPhysicalCursorPos function`n"
 
 /* C++ ==============================================================================
 BOOL WINAPI GetPhysicalCursorPos(
-    _Out_  LPPOINT lpPoint        //   (8)             Ptr
+    _Out_  LPPOINT lpPoint        //  (8)             Ptr
 );
 
 
 typedef struct tagPOINT {
-    LONG x;                       //   4 =>   0        Int
-    LONG y;                       //   4 =>   4        Int
+    LONG x;                       //  4 =>   0        Int
+    LONG y;                       //  4 =>   4        Int
 } POINT, *PPOINT;
 ================================================================================== */

@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683182(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetCurrentThread()
 {
     return, DllCall("Kernel32.dll\GetCurrentThread")

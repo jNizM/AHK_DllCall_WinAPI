@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724451(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetVersionEx()
 {
     static OSVEREX, init := VarSetCapacity(OSVEREX, 284, 0) && NumPut(284, OSVEREX, "UInt")
@@ -40,12 +40,12 @@ MsgBox, % "GetVersionEx function`n"
 
 /* C++ ==============================================================================
 BOOL WINAPI GetVersionEx(
-    _Inout_  LPOSVERSIONINFO lpVersionInfo        // Ptr
+    _Inout_  LPOSVERSIONINFO lpVersionInfo        // (284)            Ptr
 );
 
 
 typedef struct _OSVERSIONINFOEX {
-    DWORD dwOSVersionInfoSize;                    //  0 (284)         UInt
+    DWORD dwOSVersionInfoSize;                    //  4 =>   0        UInt
     DWORD dwMajorVersion;                         //  4 =>   4        UInt
     DWORD dwMinorVersion;                         //  4 =>   8        UInt
     DWORD dwBuildNumber;                          //  4 =>  12        UInt

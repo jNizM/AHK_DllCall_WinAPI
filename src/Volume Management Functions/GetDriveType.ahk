@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetDriveType(lpRootPathName)
 {
     return, DllCall("Kernel32.dll\GetDriveType", "Str", lpRootPathName)

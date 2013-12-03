@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683179(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetCurrentProcess()
 {
     return, DllCall("Kernel32.dll\GetCurrentProcess")

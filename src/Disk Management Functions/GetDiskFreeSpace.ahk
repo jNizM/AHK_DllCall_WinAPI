@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364935(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetDiskFreeSpace(lpRootPathName)
 {
     if DllCall("Kernel32.dll\GetDiskFreeSpace"

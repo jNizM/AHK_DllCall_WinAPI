@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683183(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetCurrentThreadId()
 {
     return, DllCall("Kernel32.dll\GetCurrentThreadId")

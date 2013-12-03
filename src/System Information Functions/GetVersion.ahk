@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetVersion(Version = 1)
 {
     return, (Version = 1) ? LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))

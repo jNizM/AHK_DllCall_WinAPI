@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa376875(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 LockWorkStation()
 {
     DllCall("User32.dll\LockWorkStation")

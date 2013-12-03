@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364937(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetDiskFreeSpaceEx(lpDirectoryName)
 {
     VarSetCapacity(lpFreeBytesAvailable, 8, 0)

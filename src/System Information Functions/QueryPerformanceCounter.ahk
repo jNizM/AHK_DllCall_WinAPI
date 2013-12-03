@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms644904(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 QueryPerformanceCounter()
 {
     if DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", lpPerformanceCount)

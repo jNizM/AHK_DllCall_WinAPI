@@ -1,27 +1,27 @@
 ﻿; =================================================================================================
-; Function......: DeleteFile
+; Function......: Beep
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
-; U/ANSI........: DeleteFileW (Unicode) and DeleteFileA (ANSI)
+; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms679277(v=vs.85).aspx
 ; =================================================================================================
-DeleteFile(lpFileName)
+Beep(dwFreq, dwDuration)
 {
-    DllCall("Kernel32.dll\DeleteFile", "Str", lpFileName)
+    return, DllCall("Kernel32.dll\Beep", "UInt", dwFreq, "UInt", dwDuration)
 }
-
 ; ===================================================================================
 
-DeleteFile("C:\Temp\TestFile.txt")
+Beep(750, 300)
 
 
 
 
 
 /* C++ ==============================================================================
-BOOL WINAPI DeleteFile(
-    _In_  LPCTSTR lpFileName        // Str
+BOOL WINAPI Beep(
+    _In_  DWORD dwFreq,           // UInt
+    _In_  DWORD dwDuration        // UInt
 );
 ================================================================================== */

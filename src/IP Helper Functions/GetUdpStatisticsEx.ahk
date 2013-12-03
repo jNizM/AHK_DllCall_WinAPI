@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa366031(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetUdpStatisticsEx()
 {
     static MIB_UDPSTATS, init := VarSetCapacity(MIB_UDPSTATS, 20, 0) && NumPut(20, MIB_UDPSTATS, "UInt")
@@ -33,13 +33,13 @@ MsgBox, % "GetUdpStatisticsEx function`n"
 
 /* C++ ==============================================================================
 DWORD GetUdpStatisticsEx(
-    _Out_  PMIB_UDPSTATS pStats,        // UInt
-    _In_   DWORD dwFamily               // UInt
+    _Out_  PMIB_UDPSTATS pStats,        // (20)             UInt
+    _In_   DWORD dwFamily               //                  UInt
 );
 
 
 typedef struct _MIB_UDPSTATS {
-    DWORD dwInDatagrams;                //  0 (20)          UInt
+    DWORD dwInDatagrams;                //  4 =>   0        UInt
     DWORD dwNoPorts;                    //  4 =>   4        UInt
     DWORD dwInErrors;                   //  4 =>   8        UInt
     DWORD dwOutDatagrams;               //  4 =>  12        UInt

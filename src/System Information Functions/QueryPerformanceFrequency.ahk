@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms644905(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 QueryPerformanceFrequency()
 {
     if DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", lpFrequency)

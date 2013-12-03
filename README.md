@@ -19,8 +19,14 @@ AHK --> DllCall --> WinAPI
 * [GetDiskFreeSpace](src/Disk Management Functions/GetDiskFreeSpace.ahk)
 * [GetDiskFreeSpaceEx](src/Disk Management Functions/GetDiskFreeSpaceEx.ahk)
 
+### Error Handling Functions
+* [Beep](src/Error Handling Functions/Beep.ahk)
+
 ### File Management Functions
+* [CopyFile](src/File Management Functions/CopyFile.ahk)
 * [DeleteFile](src/File Management Functions/DeleteFile.ahk)
+* [MoveFile](src/File Management Functions/MoveFile.ahk)
+* [MoveFileEx](src/File Management Functions/MoveFileEx.ahk)
 
 ### IP Helper Functions
 * [GetIpStatistics](src/IP Helper Functions/GetIpStatistics.ahk)

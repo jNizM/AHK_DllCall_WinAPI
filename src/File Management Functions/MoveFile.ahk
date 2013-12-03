@@ -1,27 +1,28 @@
 ﻿; =================================================================================================
-; Function......: DeleteFile
+; Function......: MoveFile
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
-; U/ANSI........: DeleteFileW (Unicode) and DeleteFileA (ANSI)
+; U/ANSI........: MoveFileW (Unicode) and MoveFileA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa365239(v=vs.85).aspx
 ; =================================================================================================
-DeleteFile(lpFileName)
+MoveFile(lpExistingFileName, lpNewFileName)
 {
-    DllCall("Kernel32.dll\DeleteFile", "Str", lpFileName)
+    DllCall("Kernel32.dll\MoveFile", "Str", lpExistingFileName, "Str", lpNewFileName)
 }
 
 ; ===================================================================================
 
-DeleteFile("C:\Temp\TestFile.txt")
+MoveFile("C:\Temp\TestFile.txt", "C:\Temp\TestFile_new.txt")
 
 
 
 
 
 /* C++ ==============================================================================
-BOOL WINAPI DeleteFile(
-    _In_  LPCTSTR lpFileName        // Str
+BOOL WINAPI MoveFile(
+    _In_  LPCTSTR lpExistingFileName,        // Str
+    _In_  LPCTSTR lpNewFileName              // Str
 );
 ================================================================================== */

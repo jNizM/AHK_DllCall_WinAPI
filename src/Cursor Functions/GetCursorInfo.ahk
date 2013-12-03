@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms648389(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetCursorInfo()
 {
     static PtrSize := A_PtrSize
@@ -36,19 +36,19 @@ MsgBox, % "GetCursorInfo function`n"
 
 /* C++ ==============================================================================
 BOOL WINAPI GetCursorInfo(
-    _Inout_  PCURSORINFO pci        //  (16 + A_PtrSize)             Ptr
+    _Inout_  PCURSORINFO pci        // (16 + A_PtrSize)             Ptr
 );
 
 
 typedef struct {
-    DWORD   cbSize;                 //   4 =>   0                    UInt
-    DWORD   flags;                  //   4 =>   4                    UInt
-    HCURSOR hCursor;                //   4 =>   8                    Ptr
-    POINT   ptScreenPos;            //   ==> POINT
+    DWORD   cbSize;                 //  4 =>   0                    UInt
+    DWORD   flags;                  //  4 =>   4                    UInt
+    HCURSOR hCursor;                //  4 =>   8                    Ptr
+    POINT   ptScreenPos;            //  ==> POINT
 } CURSORINFO, *PCURSORINFO, *LPCURSORINFO;
 
 typedef struct tagPOINT {
-    LONG x;                         //   4 =>   8 + A_PtrSize        Int
-    LONG y;                         //   4 =>  12 + A_PtrSize        Int
+    LONG x;                         //  4 =>   8 + A_PtrSize        Int
+    LONG y;                         //  4 =>  12 + A_PtrSize        Int
 } POINT, *PPOINT;
 ================================================================================== */

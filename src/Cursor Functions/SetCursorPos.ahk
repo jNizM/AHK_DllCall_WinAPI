@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms648394(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 SetCursorPos(X, Y)
 {
     DllCall("User32.dll\SetCursorPos", "Int", X, "Int", Y)

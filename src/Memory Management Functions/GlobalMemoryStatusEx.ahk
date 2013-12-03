@@ -6,17 +6,17 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GlobalMemoryStatusEx()
 {
     static MEMORYSTATUSEX, init := VarSetCapacity(MEMORYSTATUSEX, 64, 0) && NumPut(64, MEMORYSTATUSEX, "UInt")
     if (DllCall("Kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
     {
-		return, { 0 : NumGet(MEMORYSTATUSEX,  0, "UInt"),  1 : NumGet(MEMORYSTATUSEX,  4, "UInt")
-				, 2 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 3 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
-				, 4 : NumGet(MEMORYSTATUSEX, 24, "UInt64"), 5 : NumGet(MEMORYSTATUSEX, 32, "UInt64")
-				, 6 : NumGet(MEMORYSTATUSEX, 40, "UInt64"), 7 : NumGet(MEMORYSTATUSEX, 48, "UInt64")
-				, 8 : NumGet(MEMORYSTATUSEX, 56, "UInt64") }
+        return, { 0 : NumGet(MEMORYSTATUSEX,  0, "UInt"),  1 : NumGet(MEMORYSTATUSEX,  4, "UInt")
+                , 2 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 3 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
+                , 4 : NumGet(MEMORYSTATUSEX, 24, "UInt64"), 5 : NumGet(MEMORYSTATUSEX, 32, "UInt64")
+                , 6 : NumGet(MEMORYSTATUSEX, 40, "UInt64"), 7 : NumGet(MEMORYSTATUSEX, 48, "UInt64")
+                , 8 : NumGet(MEMORYSTATUSEX, 56, "UInt64") }
     }
 }
 ; ===================================================================================
@@ -41,11 +41,12 @@ MsgBox, % "GlobalMemoryStatusEx function`n"
 
 /* C++ ==============================================================================
 BOOL WINAPI GlobalMemoryStatusEx(
-	_Inout_  LPMEMORYSTATUSEX lpBuffer        // Ptr
+    _Inout_  LPMEMORYSTATUSEX lpBuffer        // (64)             Ptr
 );
 
+
 typedef struct _MEMORYSTATUSEX {
-    DWORD     dwLength;                       //  0 (64)          UInt
+    DWORD     dwLength;                       //  4 =>   0        UInt
     DWORD     dwMemoryLoad;                   //  4 =>   4        UInt
     DWORDLONG ullTotalPhys;                   //  8 =>   8        UInt64
     DWORDLONG ullAvailPhys;                   //  8 =>  16        UInt64

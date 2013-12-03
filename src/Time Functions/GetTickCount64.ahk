@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724411(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetTickCount64()
 {
     return, DllCall("Kernel32.dll\GetTickCount64")

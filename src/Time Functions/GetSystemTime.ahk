@@ -6,16 +6,16 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724390(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetSystemTime()
 {
     static SYSTEMTIME, init := VarSetCapacity(SYSTEMTIME, 16, 0) && NumPut(16, SYSTEMTIME, "UShort")
     if (DllCall("Kernel32.dll\GetSystemTime", "Ptr", &SYSTEMTIME))
     {
-		return, { 0 : NumGet(SYSTEMTIME,  0, "UShort"), 1 : NumGet(SYSTEMTIME,  2, "UShort")
-				, 2 : NumGet(SYSTEMTIME,  4, "UShort"), 3 : NumGet(SYSTEMTIME,  6, "UShort")
-				, 4 : NumGet(SYSTEMTIME,  8, "UShort"), 5 : NumGet(SYSTEMTIME, 10, "UShort")
-				, 6 : NumGet(SYSTEMTIME, 12, "UShort"), 7 : NumGet(SYSTEMTIME, 14, "UShort") }
+        return, { 0 : NumGet(SYSTEMTIME,  0, "UShort"), 1 : NumGet(SYSTEMTIME,  2, "UShort")
+                , 2 : NumGet(SYSTEMTIME,  4, "UShort"), 3 : NumGet(SYSTEMTIME,  6, "UShort")
+                , 4 : NumGet(SYSTEMTIME,  8, "UShort"), 5 : NumGet(SYSTEMTIME, 10, "UShort")
+                , 6 : NumGet(SYSTEMTIME, 12, "UShort"), 7 : NumGet(SYSTEMTIME, 14, "UShort") }
     }
 }
 ; ===================================================================================
@@ -39,7 +39,7 @@ MsgBox, % "GetSystemTime function`n"
 
 /* C++ ==============================================================================
 void WINAPI GetSystemTime(
-    _Out_  LPSYSTEMTIME lpSystemTime        //  (16)              Ptr
+    _Out_  LPSYSTEMTIME lpSystemTime        //  (16)             Ptr
 );
 
 

@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683181(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetCurrentProcessorNumber()
 {
     return, DllCall("Kernel32.dll\GetCurrentProcessorNumber")

@@ -6,7 +6,7 @@
 ; Author........: jNizM
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683156(v=vs.85).aspx
-; AHK =============================================================================================
+; =================================================================================================
 GetCommandLine()
 {
     return, DllCall("Kernel32.dll\GetCommandLine")
