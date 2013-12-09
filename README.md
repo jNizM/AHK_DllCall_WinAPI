@@ -36,9 +36,21 @@ AHK --> DllCall --> WinAPI
 * [GetUdpStatistics](src/IP Helper Functions/GetUdpStatistics.ahk)
 * [GetUdpStatisticsEx](src/IP Helper Functions/GetUdpStatisticsEx.ahk)
 
+### Keyboard Input Functions
+* [BlockInput](src/Keyboard Input Functions/BlockInput.ahk)
+* [GetKBCodePage](src/Keyboard Input Functions/GetKBCodePage.ahk)
+* [GetKeyboardLayout](src/Keyboard Input Functions/GetKeyboardLayout.ahk)
+
 ### Memory Management Functions
 * [GetPhysicallyInstalledSystemMemory](src/Memory Management Functions/GetPhysicallyInstalledSystemMemory.ahk)
 * [GlobalMemoryStatusEx](src/Memory Management Functions/GlobalMemoryStatusEx.ahk)
+
+### Mouse Input Functions
+* [GetCapture](src/Mouse Input Functions/GetCapture.ahk)
+* [GetDoubleClickTime](src/Mouse Input Functions/GetDoubleClickTime.ahk)
+* [ReleaseCapture](src/Mouse Input Functions/ReleaseCapture.ahk)
+* [SetDoubleClickTime](src/Mouse Input Functions/SetDoubleClickTime.ahk)
+* [SwapMouseButton](src/Mouse Input Functions/SwapMouseButton.ahk)
 
 ### Process and Thread Functions
 * [GetActiveProcessorCount](src/Process and Thread Functions/GetActiveProcessorCount.ahk)
