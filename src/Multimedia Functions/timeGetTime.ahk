@@ -1,24 +1,24 @@
 ﻿; =================================================================================================
-; Function......: ReleaseCapture
-; DLL...........: User32.dll
-; Library.......: User32.lib
+; Function......: timeGetTime
+; DLL...........: Winmm.dll
+; Library.......: Winmm.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms646261(v=vs.85).aspx
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/dd757629(v=vs.85).aspx
 ; =================================================================================================
-ReleaseCapture()
+timeGetTime()
 {
-    DllCall("User32.dll\ReleaseCapture")
+    return, DllCall("Winmm.dll\timeGetTime", "UInt")
 }
 ; ===================================================================================
 
-ReleaseCapture()
+MsgBox, % timeGetTime()
 
 
 
 
 
 /* C++ ==============================================================================
-BOOL WINAPI ReleaseCapture(void);
+DWORD timeGetTime(void);        // UInt
 ================================================================================== */
