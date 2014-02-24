@@ -52,6 +52,12 @@ AHK --> DllCall --> WinAPI
 * [SetDoubleClickTime](src/Mouse Input Functions/SetDoubleClickTime.ahk)
 * [SwapMouseButton](src/Mouse Input Functions/SwapMouseButton.ahk)
 
+### Multimedia Functions
+* [timeGetTime](src/Multimedia Functions/timeGetTime.ahk)
+
+### National Language Support Functions
+* [GetDurationFormat](src/National Language Support Functions/GetDurationFormat.ahk)
+
 ### Process and Thread Functions
 * [GetActiveProcessorCount](src/Process and Thread Functions/GetActiveProcessorCount.ahk)
 * [GetActiveProcessorGroupCount](src/Process and Thread Functions/GetActiveProcessorGroupCount.ahk)
@@ -67,9 +73,20 @@ AHK --> DllCall --> WinAPI
 * [Sleep](src/Process and Thread Functions/Sleep.ahk)
 * [SleepEx](src/Process and Thread Functions/SleepEx.ahk)
 
+### PSAPI Functions
+* [GetProcessMemoryInfo](src/PSAPI Functions/GetProcessMemoryInfo.ahk)
+
 ### System Information Functions
+* [GetComputerName](src/System Information Functions/GetComputerName.ahk)
+* [GetProductInfo](src/System Information Functions/GetProductInfo.ahk)
+* [GetSystemDirectory](src/System Information Functions/GetSystemDirectory.ahk)
+* [GetSystemRegistryQuota](src/System Information Functions/GetSystemRegistryQuota.ahk)
+* [GetSystemWindowsDirectory](src/System Information Functions/GetSystemWindowsDirectory.ahk)
+* [GetSystemWow64Directory](src/System Information Functions/GetSystemWow64Directory.ahk)
+* [GetUserName](src/System Information Functions/GetUserName.ahk)
 * [GetVersion](src/System Information Functions/GetVersion.ahk)
 * [GetVersionEx](src/System Information Functions/GetVersionEx.ahk)
+* [GetWindowsDirectory](src/System Information Functions/GetWindowsDirectory.ahk)
 * [QueryPerformanceCounter](src/System Information Functions/QueryPerformanceCounter.ahk)
 * [QueryPerformanceFrequency](src/System Information Functions/QueryPerformanceFrequency.ahk)
 

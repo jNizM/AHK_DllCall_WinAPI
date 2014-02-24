@@ -18,18 +18,18 @@ GetDiskFreeSpaceEx(lpDirectoryName)
                 , "Int64", &lpTotalNumberOfBytes
                 , "Int64", &lpTotalNumberOfFreeBytes)
     {
-        return, { 0 : Numget(lpFreeBytesAvailable, 0, "Int64*")
-                , 1 : Numget(lpTotalNumberOfBytes, 0, "Int64*")
-                , 2 : Numget(lpTotalNumberOfFreeBytes, 0, "Int64*") }
+        return, { 1 : Numget(lpFreeBytesAvailable, 0, "Int64*")
+                , 2 : Numget(lpTotalNumberOfBytes, 0, "Int64*")
+                , 3 : Numget(lpTotalNumberOfFreeBytes, 0, "Int64*") }
     }
 }
 ; ===================================================================================
 
 GetDiskFreeSpaceEx := GetDiskFreeSpaceEx("C:\")
 
-MsgBox, % "FreeBytesAvailable:`t`t"       GetDiskFreeSpaceEx[0]   " Bytes`n"
-        . "TotalNumberOfBytes:`t"         GetDiskFreeSpaceEx[1]   " Bytes`n"
-        . "TotalNumberOfFreeBytes:`t"     GetDiskFreeSpaceEx[2]   " Bytes"
+MsgBox, % "FreeBytesAvailable:`t`t"       GetDiskFreeSpaceEx[1]   " Bytes`n"
+        . "TotalNumberOfBytes:`t"         GetDiskFreeSpaceEx[2]   " Bytes`n"
+        . "TotalNumberOfFreeBytes:`t"     GetDiskFreeSpaceEx[3]   " Bytes"
 
 
 

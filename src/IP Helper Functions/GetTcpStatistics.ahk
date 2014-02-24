@@ -11,11 +11,11 @@ GetTcpStatistics()
 {
     static MIB_TCPSTATS, init := VarSetCapacity(MIB_TCPSTATS, 60, 0) && NumPut(60, MIB_TCPSTATS, "UInt")
     DllCall("Iphlpapi.dll\GetTcpStatistics", "UInt", &MIB_TCPSTATS)
-    return, {  0 : NumGet(MIB_TCPSTATS,  0, "UInt"),  1 : NumGet(MIB_TCPSTATS,  4, "UInt"),  2 : NumGet(MIB_TCPSTATS,  8, "UInt")
-            ,  3 : NumGet(MIB_TCPSTATS, 12, "UInt"),  4 : NumGet(MIB_TCPSTATS, 16, "UInt"),  5 : NumGet(MIB_TCPSTATS, 20, "UInt")
-            ,  6 : NumGet(MIB_TCPSTATS, 24, "UInt"),  7 : NumGet(MIB_TCPSTATS, 28, "UInt"),  8 : NumGet(MIB_TCPSTATS, 32, "UInt")
-            ,  9 : NumGet(MIB_TCPSTATS, 36, "UInt"), 10 : NumGet(MIB_TCPSTATS, 40, "UInt"), 11 : NumGet(MIB_TCPSTATS, 44, "UInt")
-            , 12 : NumGet(MIB_TCPSTATS, 48, "UInt"), 13 : NumGet(MIB_TCPSTATS, 52, "UInt"), 14 : NumGet(MIB_TCPSTATS, 56, "UInt") }
+    return, {  1 : NumGet(MIB_TCPSTATS,  0, "UInt"),  2 : NumGet(MIB_TCPSTATS,  4, "UInt"),  3 : NumGet(MIB_TCPSTATS,  8, "UInt")
+            ,  4 : NumGet(MIB_TCPSTATS, 12, "UInt"),  5 : NumGet(MIB_TCPSTATS, 16, "UInt"),  6 : NumGet(MIB_TCPSTATS, 20, "UInt")
+            ,  7 : NumGet(MIB_TCPSTATS, 24, "UInt"),  8 : NumGet(MIB_TCPSTATS, 28, "UInt"),  9 : NumGet(MIB_TCPSTATS, 32, "UInt")
+            , 10 : NumGet(MIB_TCPSTATS, 36, "UInt"), 11 : NumGet(MIB_TCPSTATS, 40, "UInt"), 10 : NumGet(MIB_TCPSTATS, 44, "UInt")
+            , 13 : NumGet(MIB_TCPSTATS, 48, "UInt"), 14 : NumGet(MIB_TCPSTATS, 52, "UInt"), 15 : NumGet(MIB_TCPSTATS, 56, "UInt") }
 }
 ; ===================================================================================
 
@@ -23,21 +23,21 @@ GetTcpStatistics := GetTcpStatistics()
 
 MsgBox, % "GetTcpStatistics function`n"
         . "MIB_TCPSTATS structure`n`n"
-        . "RtoAlgorithm:`t`t"     GetTcpStatistics[0]    "`n"
-        . "RtoMin:`t`t`t"         GetTcpStatistics[1]    "`n"
-        . "RtoMax:`t`t`t"         GetTcpStatistics[2]    "`n"
-        . "MaxConn:`t`t`t"        GetTcpStatistics[3]    "`n"
-        . "ActiveOpens:`t`t"      GetTcpStatistics[4]    "`n"
-        . "PassiveOpens:`t`t"     GetTcpStatistics[5]    "`n"
-        . "AttemptFails:`t`t"     GetTcpStatistics[6]    "`n"
-        . "EstabResets:`t`t"      GetTcpStatistics[7]    "`n"
-        . "CurrEstab:`t`t`t"      GetTcpStatistics[8]    "`n"
-        . "InSegs:`t`t`t"         GetTcpStatistics[9]    "`n"
-        . "OutSegs:`t`t`t"        GetTcpStatistics[10]   "`n"
-        . "RetransSegs:`t`t"      GetTcpStatistics[11]   "`n"
-        . "InErrs:`t`t`t"         GetTcpStatistics[12]   "`n"
-        . "OutRsts:`t`t`t"        GetTcpStatistics[13]   "`n"
-        . "NumConns:`t`t"         GetTcpStatistics[14]
+        . "RtoAlgorithm:`t`t"     GetTcpStatistics[1]    "`n"
+        . "RtoMin:`t`t`t"         GetTcpStatistics[2]    "`n"
+        . "RtoMax:`t`t`t"         GetTcpStatistics[3]    "`n"
+        . "MaxConn:`t`t`t"        GetTcpStatistics[4]    "`n"
+        . "ActiveOpens:`t`t"      GetTcpStatistics[5]    "`n"
+        . "PassiveOpens:`t`t"     GetTcpStatistics[6]    "`n"
+        . "AttemptFails:`t`t"     GetTcpStatistics[7]    "`n"
+        . "EstabResets:`t`t"      GetTcpStatistics[8]    "`n"
+        . "CurrEstab:`t`t`t"      GetTcpStatistics[9]    "`n"
+        . "InSegs:`t`t`t"         GetTcpStatistics[10]   "`n"
+        . "OutSegs:`t`t`t"        GetTcpStatistics[11]   "`n"
+        . "RetransSegs:`t`t"      GetTcpStatistics[12]   "`n"
+        . "InErrs:`t`t`t"         GetTcpStatistics[13]   "`n"
+        . "OutRsts:`t`t`t"        GetTcpStatistics[14]   "`n"
+        . "NumConns:`t`t"         GetTcpStatistics[15]
 
 
 

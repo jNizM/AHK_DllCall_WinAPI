@@ -16,12 +16,12 @@ GetProcessMemoryInfo_PMCEX(PID)
         static PMCEX, size := (A_PtrSize = 8 ? 80 : 44), init := VarSetCapacity(PMCEX, size, 0) && NumPut(size, PMCEX)
         if (DllCall("Kernel32.dll\K32GetProcessMemoryInfo", "Ptr", hProcess, "UInt", &PMCEX, "UInt", size))
         {
-            pu := {  0 : NumGet(PMCEX, 0, "UInt"),                        1 : NumGet(PMCEX, 4, "UInt")
-                  ,  2 : NumGet(PMCEX, 8, "Ptr"),                         3 : NumGet(PMCEX, (A_PtrSize = 8 ? 16 : 12), "Ptr")
-                  ,  4 : NumGet(PMCEX, (A_PtrSize = 8 ? 24 : 16), "Ptr"), 5 : NumGet(PMCEX, (A_PtrSize = 8 ? 32 : 20), "Ptr")
-                  ,  6 : NumGet(PMCEX, (A_PtrSize = 8 ? 40 : 24), "Ptr"), 7 : NumGet(PMCEX, (A_PtrSize = 8 ? 48 : 28), "Ptr")
-                  ,  8 : NumGet(PMCEX, (A_PtrSize = 8 ? 56 : 32), "Ptr"), 9 : NumGet(PMCEX, (A_PtrSize = 8 ? 64 : 36), "Ptr")
-                  , 10 : NumGet(PMCEX, (A_PtrSize = 8 ? 72 : 40), "Ptr") }
+            pu := {  1 : NumGet(PMCEX, 0, "UInt"),                         2 : NumGet(PMCEX, 4, "UInt")
+                  ,  3 : NumGet(PMCEX, 8, "Ptr"),                          4 : NumGet(PMCEX, (A_PtrSize = 8 ? 16 : 12), "Ptr")
+                  ,  5 : NumGet(PMCEX, (A_PtrSize = 8 ? 24 : 16), "Ptr"),  6 : NumGet(PMCEX, (A_PtrSize = 8 ? 32 : 20), "Ptr")
+                  ,  7 : NumGet(PMCEX, (A_PtrSize = 8 ? 40 : 24), "Ptr"),  8 : NumGet(PMCEX, (A_PtrSize = 8 ? 48 : 28), "Ptr")
+                  ,  9 : NumGet(PMCEX, (A_PtrSize = 8 ? 56 : 32), "Ptr"), 10 : NumGet(PMCEX, (A_PtrSize = 8 ? 64 : 36), "Ptr")
+                  , 11 : NumGet(PMCEX, (A_PtrSize = 8 ? 72 : 40), "Ptr") }
         }
         DllCall("Kernel32.dll\CloseHandle", "Ptr", hProcess)
     }
@@ -36,11 +36,11 @@ GetProcessMemoryInfo_PMC(PID)
         static PMC, size := (A_PtrSize = 8 ? 72 : 40), init := VarSetCapacity(PMC, size, 0) && NumPut(size, PMC)
         if (DllCall("Psapi.dll\GetProcessMemoryInfo", "Ptr", hProcess, "UInt", &PMC, "UInt", size))
         {
-            pu := { 0 : NumGet(PMC, 0, "UInt"),                        1 : NumGet(PMC, 4, "UInt")
-                  , 2 : NumGet(PMC, 8, "Ptr"),                         3 : NumGet(PMC, (A_PtrSize = 8 ? 16 : 12), "Ptr")
-                  , 4 : NumGet(PMC, (A_PtrSize = 8 ? 24 : 16), "Ptr"), 5 : NumGet(PMC, (A_PtrSize = 8 ? 32 : 20), "Ptr")
-                  , 6 : NumGet(PMC, (A_PtrSize = 8 ? 40 : 24), "Ptr"), 7 : NumGet(PMC, (A_PtrSize = 8 ? 48 : 28), "Ptr")
-                  , 8 : NumGet(PMC, (A_PtrSize = 8 ? 56 : 32), "Ptr"), 9 : NumGet(PMC, (A_PtrSize = 8 ? 64 : 36), "Ptr") }
+            pu := { 1 : NumGet(PMC, 0, "UInt"),                         2 : NumGet(PMC, 4, "UInt")
+                  , 3 : NumGet(PMC, 8, "Ptr"),                          4 : NumGet(PMC, (A_PtrSize = 8 ? 16 : 12), "Ptr")
+                  , 5 : NumGet(PMC, (A_PtrSize = 8 ? 24 : 16), "Ptr"),  6 : NumGet(PMC, (A_PtrSize = 8 ? 32 : 20), "Ptr")
+                  , 7 : NumGet(PMC, (A_PtrSize = 8 ? 40 : 24), "Ptr"),  8 : NumGet(PMC, (A_PtrSize = 8 ? 48 : 28), "Ptr")
+                  , 9 : NumGet(PMC, (A_PtrSize = 8 ? 56 : 32), "Ptr"), 10 : NumGet(PMC, (A_PtrSize = 8 ? 64 : 36), "Ptr") }
         }
         DllCall("Kernel32.dll\CloseHandle", "Ptr", hProcess)
     }
@@ -55,32 +55,32 @@ if (BuildVersion >= "7600") {
     GPMI := GetProcessMemoryInfo_PMCEX(ownPID)
     MsgBox, % "GetProcessMemoryInfo function`n"
             . "PROCESS_MEMORY_COUNTERS_EX structure`n`n"
-            . "cb:`t`t`t`t"                         GPMI[0]  "`n"
-            . "PageFaultCount:`t`t`t"               GPMI[1]  " bytes`n"
-            . "PeakWorkingSetSize:`t`t`t"           GPMI[2]  " bytes`n"
-            . "WorkingSetSize:`t`t`t"               GPMI[3]  " bytes`n"
-            . "QuotaPeakPagedPoolUsage:`t`t"        GPMI[4]  " bytes`n"
-            . "QuotaPagedPoolUsage:`t`t"            GPMI[5]  " bytes`n"
-            . "QuotaPeakNonPagedPoolUsage:`t"       GPMI[6]  " bytes`n"
-            . "QuotaNonPagedPoolUsage:`t`t"         GPMI[7]  " bytes`n"
-            . "PagefileUsage:`t`t`t"                GPMI[8]  " bytes`n"
-            . "PeakPagefileUsage:`t`t`t"            GPMI[9]  " bytes`n"
-            . "PrivateUsage:`t`t`t"                 GPMI[10] " bytes`n`n"
+            . "cb:`t`t`t`t"                         GPMI[1]  "`n"
+            . "PageFaultCount:`t`t`t"               GPMI[2]  " bytes`n"
+            . "PeakWorkingSetSize:`t`t`t"           GPMI[3]  " bytes`n"
+            . "WorkingSetSize:`t`t`t"               GPMI[4]  " bytes`n"
+            . "QuotaPeakPagedPoolUsage:`t`t"        GPMI[5]  " bytes`n"
+            . "QuotaPagedPoolUsage:`t`t"            GPMI[6]  " bytes`n"
+            . "QuotaPeakNonPagedPoolUsage:`t"       GPMI[7]  " bytes`n"
+            . "QuotaNonPagedPoolUsage:`t`t"         GPMI[8]  " bytes`n"
+            . "PagefileUsage:`t`t`t"                GPMI[9]  " bytes`n"
+            . "PeakPagefileUsage:`t`t`t"            GPMI[10] " bytes`n"
+            . "PrivateUsage:`t`t`t"                 GPMI[11] " bytes`n`n"
             . "BUILD: " BuildVersion " | PID: " ownPID "`n"
 } else {
     GPMI := GetProcessMemoryInfo_PMC(ownPID)
     MsgBox, % "GetProcessMemoryInfo function`n"
             . "PROCESS_MEMORY_COUNTERS_EX structure`n`n"
-            . "cb:`t`t`t`t"                         GPMI[0]  "`n"
-            . "PageFaultCount:`t`t`t"               GPMI[1]  " bytes`n"
-            . "PeakWorkingSetSize:`t`t"             GPMI[2]  " bytes`n"
-            . "WorkingSetSize:`t`t`t"               GPMI[3]  " bytes`n"
-            . "QuotaPeakPagedPoolUsage:`t`t"        GPMI[4]  " bytes`n"
-            . "QuotaPagedPoolUsage:`t`t"            GPMI[5]  " bytes`n"
-            . "QuotaPeakNonPagedPoolUsage:`t"       GPMI[6]  " bytes`n"
-            . "QuotaNonPagedPoolUsage:`t`t"         GPMI[7]  " bytes`n"
-            . "PagefileUsage:`t`t`t"                GPMI[8]  " bytes`n"
-            . "PeakPagefileUsage:`t`t`t"            GPMI[9]  " bytes`n`n"
+            . "cb:`t`t`t`t"                         GPMI[1]  "`n"
+            . "PageFaultCount:`t`t`t"               GPMI[2]  " bytes`n"
+            . "PeakWorkingSetSize:`t`t"             GPMI[3]  " bytes`n"
+            . "WorkingSetSize:`t`t`t"               GPMI[4]  " bytes`n"
+            . "QuotaPeakPagedPoolUsage:`t`t"        GPMI[5]  " bytes`n"
+            . "QuotaPagedPoolUsage:`t`t"            GPMI[6]  " bytes`n"
+            . "QuotaPeakNonPagedPoolUsage:`t"       GPMI[7]  " bytes`n"
+            . "QuotaNonPagedPoolUsage:`t`t"         GPMI[8]  " bytes`n"
+            . "PagefileUsage:`t`t`t"                GPMI[9]  " bytes`n"
+            . "PeakPagefileUsage:`t`t`t"            GPMI[10] " bytes`n`n"
             . "BUILD: " BuildVersion " | PID: " ownPID "`n"
 }
 

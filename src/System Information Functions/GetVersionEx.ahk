@@ -12,11 +12,11 @@ GetVersionEx()
     static OSVEREX, init := VarSetCapacity(OSVEREX, 284, 0) && NumPut(284, OSVEREX, "UInt")
     if (DllCall("Kernel32.dll\GetVersionEx", "Ptr", &OSVEREX))
     {
-        return, { 0 : NumGet(OSVEREX,   0, "UInt"),   1 : NumGet(OSVEREX,       4, "UInt")
-                , 2 : NumGet(OSVEREX,   8, "UInt"),   3 : NumGet(OSVEREX,      12, "UInt")
-                , 4 : NumGet(OSVEREX,  16, "UInt"),   5 : StrGet(&OSVEREX+20, 128, "UTF-16")
-                , 6 : NumGet(OSVEREX, 276, "UShort"), 7 : NumGet(OSVEREX,     278, "UShort")
-                , 8 : NumGet(OSVEREX, 280, "UShort"), 9 : NumGet(OSVEREX,     282, "UChar") }
+        return, { 1 : NumGet(OSVEREX,   0, "UInt"),    2 : NumGet(OSVEREX,       4, "UInt")
+                , 3 : NumGet(OSVEREX,   8, "UInt"),    4 : NumGet(OSVEREX,      12, "UInt")
+                , 5 : NumGet(OSVEREX,  16, "UInt"),    6 : StrGet(&OSVEREX+20, 128, "UTF-16")
+                , 7 : NumGet(OSVEREX, 276, "UShort"),  8 : NumGet(OSVEREX,     278, "UShort")
+                , 9 : NumGet(OSVEREX, 280, "UShort"), 10 : NumGet(OSVEREX,     282, "UChar") }
     }
 }
 ; ===================================================================================
@@ -25,16 +25,16 @@ GetVersionEx := GetVersionEx()
 
 MsgBox, % "GetVersionEx function`n"
         . "OSVERSIONINFOEX structure`n`n"
-        . "OSVersionInfoSize:`t`t"     GetVersionEx[0]   "`n"
-        . "MajorVersion:`t`t"          GetVersionEx[1]   "`n"
-        . "MinorVersion:`t`t"          GetVersionEx[2]   "`n"
-        . "BuildNumber:`t`t"           GetVersionEx[3]   "`n"
-        . "PlatformId:`t`t"            GetVersionEx[4]   "`n"
-        . "CSDVersion:`t`t"            GetVersionEx[5]   "`n"
-        . "ServicePackMajor:`t`t"      GetVersionEx[6]   "`n"
-        . "ServicePackMinor:`t`t"      GetVersionEx[7]   "`n"
-        . "SuiteMask:`t`t"             GetVersionEx[8]   "`n"
-        . "ProductType:`t`t"           GetVersionEx[9]
+        . "OSVersionInfoSize:`t`t"     GetVersionEx[1]   "`n"
+        . "MajorVersion:`t`t"          GetVersionEx[2]   "`n"
+        . "MinorVersion:`t`t"          GetVersionEx[3]   "`n"
+        . "BuildNumber:`t`t"           GetVersionEx[4]   "`n"
+        . "PlatformId:`t`t"            GetVersionEx[5]   "`n"
+        . "CSDVersion:`t`t"            GetVersionEx[6]   "`n"
+        . "ServicePackMajor:`t`t"      GetVersionEx[7]   "`n"
+        . "ServicePackMinor:`t`t"      GetVersionEx[8]   "`n"
+        . "SuiteMask:`t`t"             GetVersionEx[9]   "`n"
+        . "ProductType:`t`t"           GetVersionEx[10]
 
 
 
