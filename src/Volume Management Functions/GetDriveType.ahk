@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetDriveType(lpRootPathName)
 {
-    return, DllCall("Kernel32.dll\GetDriveType", "Str", lpRootPathName)
+    return DllCall("Kernel32.dll\GetDriveType", "Str", lpRootPathName)
 }
 ; ===================================================================================
 

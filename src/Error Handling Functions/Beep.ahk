@@ -9,7 +9,7 @@
 ; =================================================================================================
 Beep(dwFreq, dwDuration)
 {
-    return, DllCall("Kernel32.dll\Beep", "UInt", dwFreq, "UInt", dwDuration)
+    return DllCall("Kernel32.dll\Beep", "UInt", dwFreq, "UInt", dwDuration)
 }
 ; ===================================================================================
 

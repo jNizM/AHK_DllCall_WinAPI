@@ -9,7 +9,7 @@
 ; =================================================================================================
 SetDoubleClickTime(uInterval)
 {
-    return, DllCall("User32.dll\SetDoubleClickTime", "UInt", uInterval)
+    return DllCall("User32.dll\SetDoubleClickTime", "UInt", uInterval)
 }
 ; ===================================================================================
 

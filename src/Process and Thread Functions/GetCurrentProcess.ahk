@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetCurrentProcess()
 {
-    return, DllCall("Kernel32.dll\GetCurrentProcess")
+    return DllCall("Kernel32.dll\GetCurrentProcess")
 }
 ; ===================================================================================
 

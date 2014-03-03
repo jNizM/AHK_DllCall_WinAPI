@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetKeyboardLayout(idThread)
 {
-    return, DllCall("User32.dll\GetKeyboardLayout", "UInt", idThread)
+    return DllCall("User32.dll\GetKeyboardLayout", "UInt", idThread)
 }
 ; ===================================================================================
 

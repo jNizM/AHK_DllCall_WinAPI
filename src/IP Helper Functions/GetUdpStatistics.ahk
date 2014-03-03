@@ -11,8 +11,8 @@ GetUdpStatistics()
 {
     static MIB_UDPSTATS, init := VarSetCapacity(MIB_UDPSTATS, 20, 0) && NumPut(20, MIB_UDPSTATS, "UInt")
     DllCall("Iphlpapi.dll\GetUdpStatistics", "UInt", &MIB_UDPSTATS)
-    return, {  1 : NumGet(MIB_UDPSTATS,  0, "UInt"), 2 : NumGet(MIB_UDPSTATS,  4, "UInt"), 3 : NumGet(MIB_UDPSTATS,  8, "UInt")
-            ,  4 : NumGet(MIB_UDPSTATS, 12, "UInt"), 5 : NumGet(MIB_UDPSTATS, 16, "UInt") }
+    return {  1 : NumGet(MIB_UDPSTATS,  0, "UInt"), 2 : NumGet(MIB_UDPSTATS,  4, "UInt"), 3 : NumGet(MIB_UDPSTATS,  8, "UInt")
+           ,  4 : NumGet(MIB_UDPSTATS, 12, "UInt"), 5 : NumGet(MIB_UDPSTATS, 16, "UInt") }
 }
 ; ===================================================================================
 

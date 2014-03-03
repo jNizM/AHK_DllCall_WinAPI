@@ -12,7 +12,7 @@ GetWindowsDirectory()
     static uSize := VarSetCapacity(lpBuffer, 260, 0)
     if DllCall("Kernel32.dll\GetWindowsDirectory", "Str", lpBuffer, "UInt", uSize)
     {
-        return, lpBuffer
+        return lpBuffer
     }
 }
 ; ===================================================================================

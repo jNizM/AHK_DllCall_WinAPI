@@ -13,8 +13,8 @@ GetCursorInfo()
     static CURSORINFO, init := VarSetCapacity(CURSORINFO, PtrSize + 16, 0) && NumPut(PtrSize + 16, CURSORINFO, "UInt")
     if (DllCall("User32.dll\GetCursorInfo", "Ptr", &CURSORINFO))
     {
-        return, { 1 : NumGet(CURSORINFO, 0, "UInt"), 2 : NumGet(CURSORINFO, 4, "UInt"), 3 : NumGet(CURSORINFO, 8, "Ptr")
-                , 4 : NumGet(CURSORINFO, PtrSize + 8, "Int"), 5 : NumGet(CURSORINFO, PtrSize + 12, "Int") }
+        return { 1 : NumGet(CURSORINFO, 0, "UInt"), 2 : NumGet(CURSORINFO, 4, "UInt"), 3 : NumGet(CURSORINFO, 8, "Ptr")
+               , 4 : NumGet(CURSORINFO, PtrSize + 8, "Int"), 5 : NumGet(CURSORINFO, PtrSize + 12, "Int") }
     }
 }
 ; ===================================================================================

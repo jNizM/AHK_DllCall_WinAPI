@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetCurrentThreadId()
 {
-    return, DllCall("Kernel32.dll\GetCurrentThreadId")
+    return DllCall("Kernel32.dll\GetCurrentThreadId")
 }
 ; ===================================================================================
 

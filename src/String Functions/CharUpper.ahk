@@ -1,24 +1,29 @@
 ﻿; =================================================================================================
-; Function......: GetCapture
+; Function......: CharUpper
 ; DLL...........: User32.dll
 ; Library.......: User32.lib
-; U/ANSI........:
+; U/ANSI........: CharUpperW (Unicode) and CharUpperA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms646257(v=vs.85).aspx
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms647474(v=vs.85).aspx
 ; =================================================================================================
-GetCapture()
+CharUpper(lpsz)
 {
-    return DllCall("User32.dll\GetCapture")
+    if DllCall("User32.dll\CharUpper", "Str", lpsz)
+    {
+        return lpsz
+    }
 }
 ; ===================================================================================
 
-MsgBox, % GetCapture()
+MsgBox, % CharUpper("lower_to_upper")
 
 
 
 
 
 /* C++ ==============================================================================
-HWND WINAPI GetCapture(void);
+LPTSTR WINAPI CharUpper(
+    _Inout_  LPTSTR lpsz        // Str
+);
 ================================================================================== */

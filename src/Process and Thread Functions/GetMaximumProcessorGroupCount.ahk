@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetMaximumProcessorGroupCount()
 {
-    return, DllCall("Kernel32.dll\GetMaximumProcessorGroupCount")
+    return DllCall("Kernel32.dll\GetMaximumProcessorGroupCount")
 }
 ; ===================================================================================
 

@@ -7,33 +7,34 @@
 ; Modified......:
 ; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439(v=vs.85).aspx
 ; =================================================================================================
-GetVersion(Version = 1)
+GetVersion()
 {
-    return, (Version = 1) ? LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-          : (Version = 2) ? HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-          : (Version = 3) ? HIWORD(DllCall("Kernel32.dll\GetVersion")) : ""
+    return { 1 : LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
+	       , 2 : HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
+		   , 3 : HIWORD(DllCall("Kernel32.dll\GetVersion")) }
 }
 LOWORD(l)
 {
-    return l&0xffff
+    return l & 0xffff
 }
 HIWORD(l)
 {
-    return (l>>16)&0xffff
+    return (l >> 16) & 0xffff
 }
 LOBYTE(w)
 {
-    return w&0xff
+    return w & 0xff
 }
 HIBYTE(w)
 {
-    return (w>>8)&0xff
+    return (w >> 8) & 0xff
 }
 ; ===================================================================================
 
-MsgBox, % "Major:`t"     GetVersion(1)   "`n"
-        . "Minor:`t"     GetVersion(2)   "`n"
-        . "Build:`t"     GetVersion(3)
+GetVersion := GetVersion()
+MsgBox, % "Major:`t"     GetVersion[1]   "`n"
+        . "Minor:`t"     GetVersion[2]   "`n"
+        . "Build:`t"     GetVersion[3]
 
 
 MajorVersion := DllCall("Kernel32.dll\GetVersion") & 0xff

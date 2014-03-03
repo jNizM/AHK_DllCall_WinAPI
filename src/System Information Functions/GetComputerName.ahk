@@ -12,7 +12,7 @@ GetComputerName()
     static lpnSize := VarSetCapacity(lpBuffer, 64, 0) + 1
     if DllCall("Kernel32.dll\GetComputerName", "Str", lpBuffer, "UInt*", lpnSize)
     {
-        return, lpBuffer
+        return lpBuffer
     }
 }
 ; ===================================================================================

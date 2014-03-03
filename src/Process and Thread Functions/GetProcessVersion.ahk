@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetMaximumProcessorCount(ProcessId)
 {
-    return, DllCall("Kernel32.dll\GetMaximumProcessorCount", "UInt", ProcessId)
+    return DllCall("Kernel32.dll\GetMaximumProcessorCount", "UInt", ProcessId)
 }
 ; ===================================================================================
 

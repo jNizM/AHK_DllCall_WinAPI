@@ -12,11 +12,11 @@ GlobalMemoryStatusEx()
     static MEMORYSTATUSEX, init := VarSetCapacity(MEMORYSTATUSEX, 64, 0) && NumPut(64, MEMORYSTATUSEX, "UInt")
     if (DllCall("Kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
     {
-        return, { 1 : NumGet(MEMORYSTATUSEX,  0, "UInt"),   2 : NumGet(MEMORYSTATUSEX,  4, "UInt")
-                , 3 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 4 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
-                , 5 : NumGet(MEMORYSTATUSEX, 24, "UInt64"), 6 : NumGet(MEMORYSTATUSEX, 32, "UInt64")
-                , 7 : NumGet(MEMORYSTATUSEX, 40, "UInt64"), 8 : NumGet(MEMORYSTATUSEX, 48, "UInt64")
-                , 9 : NumGet(MEMORYSTATUSEX, 56, "UInt64") }
+        return { 1 : NumGet(MEMORYSTATUSEX,  0, "UInt"),   2 : NumGet(MEMORYSTATUSEX,  4, "UInt")
+               , 3 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 4 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
+               , 5 : NumGet(MEMORYSTATUSEX, 24, "UInt64"), 6 : NumGet(MEMORYSTATUSEX, 32, "UInt64")
+               , 7 : NumGet(MEMORYSTATUSEX, 40, "UInt64"), 8 : NumGet(MEMORYSTATUSEX, 48, "UInt64")
+               , 9 : NumGet(MEMORYSTATUSEX, 56, "UInt64") }
     }
 }
 ; ===================================================================================

@@ -12,7 +12,7 @@ GetUserName()
     static lpnSize := VarSetCapacity(lpBuffer, 256, 0) + 1
     if DllCall("Advapi32.dll\GetUserName", "Str", lpBuffer, "UInt*", lpnSize)
     {
-        return, lpBuffer
+        return lpBuffer
     }
 }
 ; ===================================================================================

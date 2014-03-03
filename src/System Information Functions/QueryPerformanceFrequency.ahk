@@ -11,7 +11,7 @@ QueryPerformanceFrequency()
 {
     if DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", lpFrequency)
     {
-        return, % lpFrequency
+        return lpFrequency
     }
 }
 ; ===================================================================================
@@ -21,7 +21,7 @@ MsgBox % QueryPerformanceFrequency()
 
 DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
 DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", S)
-loop, 10000000
+loop 10000000
     i++
 DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", E)
 MsgBox, % (E - S) / F

@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetCurrentProcessorNumber()
 {
-    return, DllCall("Kernel32.dll\GetCurrentProcessorNumber")
+    return DllCall("Kernel32.dll\GetCurrentProcessorNumber")
 }
 ; ===================================================================================
 

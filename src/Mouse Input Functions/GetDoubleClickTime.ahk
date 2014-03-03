@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetDoubleClickTime()
 {
-    return, DllCall("User32.dll\GetDoubleClickTime")
+    return DllCall("User32.dll\GetDoubleClickTime")
 }
 ; ===================================================================================
 

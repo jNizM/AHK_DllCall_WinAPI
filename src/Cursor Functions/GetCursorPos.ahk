@@ -12,7 +12,7 @@ GetCursorPos()
     static POINT, init := VarSetCapacity(POINT, 8, 0) && NumPut(8, POINT, "Int")
     if (DllCall("User32.dll\GetCursorPos", "Ptr", &POINT))
     {
-        return, { 1 : NumGet(POINT, 0, "Int"), 2 : NumGet(POINT, 4, "Int") }
+        return { 1 : NumGet(POINT, 0, "Int"), 2 : NumGet(POINT, 4, "Int") }
     }
 }
 ; ===================================================================================

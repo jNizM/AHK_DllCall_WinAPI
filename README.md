@@ -76,6 +76,12 @@ AHK --> DllCall --> WinAPI
 ### PSAPI Functions
 * [GetProcessMemoryInfo](src/PSAPI Functions/GetProcessMemoryInfo.ahk)
 
+### String Functions
+* [CharLower](src/String Functions/CharLower.ahk)
+* [CharLowerBuff](src/String Functions/CharLowerBuff.ahk)
+* [CharUpper](src/String Functions/CharUpper.ahk)
+* [CharUpperBuff](src/String Functions/CharUpperBuff.ahk)
+
 ### System Information Functions
 * [GetComputerName](src/System Information Functions/GetComputerName.ahk)
 * [GetProductInfo](src/System Information Functions/GetProductInfo.ahk)

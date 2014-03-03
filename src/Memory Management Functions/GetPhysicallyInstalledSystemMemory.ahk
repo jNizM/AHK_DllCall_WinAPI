@@ -11,7 +11,7 @@ GetPhysicallyInstalledSystemMemory()
 {
     if DllCall("kernel32.dll\GetPhysicallyInstalledSystemMemory", "UInt64*", TotalMemoryInKilobytes)
     {
-        return, % TotalMemoryInKilobytes
+        return TotalMemoryInKilobytes
     }
 }
 ; ===================================================================================

@@ -11,14 +11,14 @@ GetIpStatistics()
 {
     static MIB_IPSTATS, init := VarSetCapacity(MIB_IPSTATS, 92, 0) && NumPut(92, MIB_IPSTATS, "UInt")
     DllCall("Iphlpapi.dll\GetIpStatistics", "UInt", &MIB_IPSTATS)
-    return, {  1 : NumGet(MIB_IPSTATS,  0, "UInt"),  2 : NumGet(MIB_IPSTATS,  4, "UInt"),  3 : NumGet(MIB_IPSTATS,  8, "UInt")
-            ,  4 : NumGet(MIB_IPSTATS, 12, "UInt"),  5 : NumGet(MIB_IPSTATS, 16, "UInt"),  6 : NumGet(MIB_IPSTATS, 20, "UInt")
-            ,  7 : NumGet(MIB_IPSTATS, 24, "UInt"),  8 : NumGet(MIB_IPSTATS, 28, "UInt"),  9 : NumGet(MIB_IPSTATS, 32, "UInt")
-            , 10 : NumGet(MIB_IPSTATS, 36, "UInt"), 11 : NumGet(MIB_IPSTATS, 40, "UInt"), 12 : NumGet(MIB_IPSTATS, 44, "UInt")
-            , 13 : NumGet(MIB_IPSTATS, 48, "UInt"), 14 : NumGet(MIB_IPSTATS, 52, "UInt"), 15 : NumGet(MIB_IPSTATS, 56, "UInt")
-            , 16 : NumGet(MIB_IPSTATS, 60, "UInt"), 17 : NumGet(MIB_IPSTATS, 64, "UInt"), 18 : NumGet(MIB_IPSTATS, 68, "UInt")
-            , 19 : NumGet(MIB_IPSTATS, 72, "UInt"), 20 : NumGet(MIB_IPSTATS, 76, "UInt"), 21 : NumGet(MIB_IPSTATS, 80, "UInt")
-            , 22 : NumGet(MIB_IPSTATS, 84, "UInt"), 23 : NumGet(MIB_IPSTATS, 88, "UInt") }
+    return {  1 : NumGet(MIB_IPSTATS,  0, "UInt"),  2 : NumGet(MIB_IPSTATS,  4, "UInt"),  3 : NumGet(MIB_IPSTATS,  8, "UInt")
+           ,  4 : NumGet(MIB_IPSTATS, 12, "UInt"),  5 : NumGet(MIB_IPSTATS, 16, "UInt"),  6 : NumGet(MIB_IPSTATS, 20, "UInt")
+           ,  7 : NumGet(MIB_IPSTATS, 24, "UInt"),  8 : NumGet(MIB_IPSTATS, 28, "UInt"),  9 : NumGet(MIB_IPSTATS, 32, "UInt")
+           , 10 : NumGet(MIB_IPSTATS, 36, "UInt"), 11 : NumGet(MIB_IPSTATS, 40, "UInt"), 12 : NumGet(MIB_IPSTATS, 44, "UInt")
+           , 13 : NumGet(MIB_IPSTATS, 48, "UInt"), 14 : NumGet(MIB_IPSTATS, 52, "UInt"), 15 : NumGet(MIB_IPSTATS, 56, "UInt")
+           , 16 : NumGet(MIB_IPSTATS, 60, "UInt"), 17 : NumGet(MIB_IPSTATS, 64, "UInt"), 18 : NumGet(MIB_IPSTATS, 68, "UInt")
+           , 19 : NumGet(MIB_IPSTATS, 72, "UInt"), 20 : NumGet(MIB_IPSTATS, 76, "UInt"), 21 : NumGet(MIB_IPSTATS, 80, "UInt")
+           , 22 : NumGet(MIB_IPSTATS, 84, "UInt"), 23 : NumGet(MIB_IPSTATS, 88, "UInt") }
 }
 ; ===================================================================================
 

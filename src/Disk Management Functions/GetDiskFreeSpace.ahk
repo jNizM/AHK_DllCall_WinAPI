@@ -16,7 +16,7 @@ GetDiskFreeSpace(lpRootPathName)
                 , "UInt*", lpNumberOfFreeClusters
                 , "UInt*", lpTotalNumberOfClusters)
     {
-        return, % (lpSectorsPerCluster * lpBytesPerSector * lpNumberOfFreeClusters)
+        return (lpSectorsPerCluster * lpBytesPerSector * lpNumberOfFreeClusters)
     }
 }
 ; ===================================================================================

@@ -9,7 +9,7 @@
 ; =================================================================================================
 GetActiveProcessorCount(GroupNumber)
 {
-    return, DllCall("Kernel32.dll\GetActiveProcessorCount", "UShort", GroupNumber)
+    return DllCall("Kernel32.dll\GetActiveProcessorCount", "UShort", GroupNumber)
 }
 ; ===================================================================================
 

@@ -25,7 +25,7 @@ GetProcessMemoryInfo_PMCEX(PID)
         }
         DllCall("Kernel32.dll\CloseHandle", "Ptr", hProcess)
     }
-    return, % pu
+    return pu
 }
 GetProcessMemoryInfo_PMC(PID)
 {
@@ -44,7 +44,7 @@ GetProcessMemoryInfo_PMC(PID)
         }
         DllCall("Kernel32.dll\CloseHandle", "Ptr", hProcess)
     }
-    return, % pu
+    return pu
 }
 ; ===================================================================================
 

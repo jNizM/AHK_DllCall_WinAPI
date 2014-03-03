@@ -11,7 +11,7 @@ GetSystemRegistryQuota()
 {
     if DllCall("Kernel32.dll\GetSystemRegistryQuota", "UInt*", pdwQuotaAllowed, "UInt*", pdwQuotaUsed)
     {
-        return, { 1: pdwQuotaAllowed, 2 : pdwQuotaUsed }
+        return { 1: pdwQuotaAllowed, 2 : pdwQuotaUsed }
     }
 }
 ; ===================================================================================

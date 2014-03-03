@@ -15,7 +15,7 @@ GetProductInfo(dwOSMajorVersion, dwOSMinorVersion, dwSpMajorVersion, dwSpMinorVe
                                              , "UInt",  dwSpMinorVersion
                                              , "UInt*", pdwReturnedProductType)
     {
-        return, pdwReturnedProductType
+        return pdwReturnedProductType
     }
 }
 ; ===================================================================================
@@ -25,11 +25,11 @@ GetVersionEx()
     static OSVEREX, init := VarSetCapacity(OSVEREX, 284, 0) && NumPut(284, OSVEREX, "UInt")
     if (DllCall("Kernel32.dll\GetVersionEx", "Ptr", &OSVEREX))
     {
-        return, { 1 : NumGet(OSVEREX,   0, "UInt"),    2 : NumGet(OSVEREX,       4, "UInt")
-                , 3 : NumGet(OSVEREX,   8, "UInt"),    4 : NumGet(OSVEREX,      12, "UInt")
-                , 5 : NumGet(OSVEREX,  16, "UInt"),    6 : StrGet(&OSVEREX+20, 128, "UTF-16")
-                , 7 : NumGet(OSVEREX, 276, "UShort"),  8 : NumGet(OSVEREX,     278, "UShort")
-                , 9 : NumGet(OSVEREX, 280, "UShort"), 10 : NumGet(OSVEREX,     282, "UChar") }
+        return { 1 : NumGet(OSVEREX,   0, "UInt"),    2 : NumGet(OSVEREX,       4, "UInt")
+               , 3 : NumGet(OSVEREX,   8, "UInt"),    4 : NumGet(OSVEREX,      12, "UInt")
+               , 5 : NumGet(OSVEREX,  16, "UInt"),    6 : StrGet(&OSVEREX+20, 128, "UTF-16")
+               , 7 : NumGet(OSVEREX, 276, "UShort"),  8 : NumGet(OSVEREX,     278, "UShort")
+               , 9 : NumGet(OSVEREX, 280, "UShort"), 10 : NumGet(OSVEREX,     282, "UChar") }
     }
 }
 

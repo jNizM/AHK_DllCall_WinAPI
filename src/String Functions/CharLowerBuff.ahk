@@ -1,24 +1,30 @@
 ﻿; =================================================================================================
-; Function......: GetCapture
+; Function......: CharLowerBuff
 ; DLL...........: User32.dll
 ; Library.......: User32.lib
-; U/ANSI........:
+; U/ANSI........: CharLowerBuffW (Unicode) and CharLowerBuffA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms646257(v=vs.85).aspx
+; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms647468(v=vs.85).aspx
 ; =================================================================================================
-GetCapture()
+CharLowerBuff(lpsz)
 {
-    return DllCall("User32.dll\GetCapture")
+    if DllCall("User32.dll\CharLowerBuff", "Str", lpsz, "UInt", StrLen(lpsz))
+    {
+        return lpsz
+    }
 }
 ; ===================================================================================
 
-MsgBox, % GetCapture()
+MsgBox, % CharLowerBuff("UPPER_TO_LOWER")
 
 
 
 
 
 /* C++ ==============================================================================
-HWND WINAPI GetCapture(void);
+DWORD WINAPI CharLowerBuff(
+    _Inout_  LPTSTR lpsz,           // Str
+    _In_     DWORD cchLength        // UInt
+);
 ================================================================================== */
