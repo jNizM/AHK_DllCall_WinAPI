@@ -25,6 +25,10 @@ AHK --> DllCall --> WinAPI
 ### File Management Functions
 * [CopyFile](src/File Management Functions/CopyFile.ahk)
 * [DeleteFile](src/File Management Functions/DeleteFile.ahk)
+* [GetFileAttributes](src/File Management Functions/GetFileAttributes.ahk)
+* [GetFileSize](src/File Management Functions/GetFileSize.ahk)
+* [GetFileSizeEx](src/File Management Functions/GetFileSizeEx.ahk)
+* [GetTempPath](src/File Management Functions/GetTempPath.ahk)
 * [MoveFile](src/File Management Functions/MoveFile.ahk)
 * [MoveFileEx](src/File Management Functions/MoveFileEx.ahk)
 
