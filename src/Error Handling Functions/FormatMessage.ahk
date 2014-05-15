@@ -9,9 +9,9 @@
 ; AHK =============================================================================================
 FormatMessage(dwMessageId)
 {
-	VarSetCapacity(lpBuffer, 2024)
-	DllCall("FormatMessage", "UInt", 0x1000, "UInt", 0, "UInt", dwMessageId, "UInt", 0x800, "Str", lpBuffer, "UInt", 500, "UInt", 0)
-	MsgBox, % "ErrorCode:`t" dwMessageId "`nErrorMessage:`t" lpBuffer
+    VarSetCapacity(lpBuffer, 2024)
+    DllCall("FormatMessage", "UInt", 0x1000, "UInt", 0, "UInt", dwMessageId, "UInt", 0x800, "Str", lpBuffer, "UInt", 500, "UInt", 0)
+    MsgBox, % "ErrorCode:`t" dwMessageId "`nErrorMessage:`t" lpBuffer
 }
 ; ===================================================================================
 
@@ -19,14 +19,14 @@ DeleteFile("C:\Temp\TestFile.txt")
 
 GetLastError()
 {
-	return (DllCall("kernel32.dll\GetLastError"))
+    return (DllCall("kernel32.dll\GetLastError"))
 }
 DeleteFile(lpFileName)
 {
     if (DllCall("kernel32.dll\DeleteFile", "UInt", &lpFileName) = 0)
-	{
+    {
         FormatMessage(GetLastError())
-	}
+    }
 }
 
 
