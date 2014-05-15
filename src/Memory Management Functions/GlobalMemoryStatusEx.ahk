@@ -40,7 +40,7 @@ MsgBox, % "GlobalMemoryStatusEx function`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GlobalMemoryStatusEx(
+BOOL WINAPI GlobalMemoryStatusEx(             //                  UInt
     _Inout_  LPMEMORYSTATUSEX lpBuffer        // (64)             Ptr
 );
 

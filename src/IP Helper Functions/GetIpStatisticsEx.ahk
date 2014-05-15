@@ -56,7 +56,7 @@ MsgBox, % "GetIpStatistics function`n"
 
 
 /* C++ ==============================================================================
-DWORD GetIpStatisticsEx(
+DWORD GetIpStatisticsEx(               //                  UInt
     _Out_  PMIB_IPSTATS pStats,        // (92)             UInt
     _In_   DWORD dwFamily              //                  UInt
 );

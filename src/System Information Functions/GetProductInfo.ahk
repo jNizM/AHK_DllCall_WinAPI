@@ -42,7 +42,7 @@ MsgBox, % GetProductInfo(GetVersionEx[2], GetVersionEx[3], GetVersionEx[7], GetV
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetProductInfo(
+BOOL WINAPI GetProductInfo(                     // UInt
     _In_   DWORD dwOSMajorVersion,              // UInt
     _In_   DWORD dwOSMinorVersion,              // UInt
     _In_   DWORD dwSpMajorVersion,              // UInt

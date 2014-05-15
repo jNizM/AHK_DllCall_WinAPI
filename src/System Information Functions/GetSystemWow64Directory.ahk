@@ -24,8 +24,8 @@ MsgBox, % GetSystemWow64Directory()
 
 
 /* C++ ==============================================================================
-UINT WINAPI GetSystemWow64Directory(
-  _Out_  LPTSTR lpBuffer,        // Str
-  _In_   UINT uSize              // UInt
+UINT WINAPI GetSystemWow64Directory(        // UInt
+  _Out_  LPTSTR lpBuffer,                   // Str
+  _In_   UINT uSize                         // UInt
 );
 ================================================================================== */

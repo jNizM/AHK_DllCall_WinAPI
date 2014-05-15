@@ -23,7 +23,7 @@ MsgBox, % CharLower("UPPER_TO_LOWER")
 
 
 /* C++ ==============================================================================
-LPTSTR WINAPI CharLower(
+LPTSTR WINAPI CharLower(        // Str
     _Inout_  LPTSTR lpsz        // Str
 );
 ================================================================================== */

@@ -24,7 +24,7 @@ MsgBox, % GetFileAttributes("C:\Windows\Notepad.exe")
 
 
 /* C++ ==============================================================================
-DWORD WINAPI GetFileAttributes(
-    _In_  LPCTSTR lpFileName        // Str
+DWORD WINAPI GetFileAttributes(        // UInt
+    _In_  LPCTSTR lpFileName           // Str
 );
 ================================================================================== */

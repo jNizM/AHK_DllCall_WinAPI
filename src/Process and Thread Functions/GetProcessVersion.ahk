@@ -20,7 +20,7 @@ MsgBox, % GetMaximumProcessorCount(0)
 
 
 /* C++ ==============================================================================
-DWORD WINAPI GetProcessVersion(
-    _In_  DWORD ProcessId        // UInt
+DWORD WINAPI GetProcessVersion(        // UInt
+    _In_  DWORD ProcessId              // UInt
 );
 ================================================================================== */

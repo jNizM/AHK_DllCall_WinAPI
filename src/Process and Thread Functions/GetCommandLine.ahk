@@ -20,5 +20,5 @@ MsgBox, % GetCommandLine()
 
 
 /* C++ ==============================================================================
-LPTSTR WINAPI GetCommandLine(void);
+LPTSTR WINAPI GetCommandLine(void);        // Str
 ================================================================================== */

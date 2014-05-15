@@ -20,7 +20,7 @@ Beep(750, 300)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI Beep(
+BOOL WINAPI Beep(                 // UInt
     _In_  DWORD dwFreq,           // UInt
     _In_  DWORD dwDuration        // UInt
 );

@@ -89,7 +89,7 @@ if (BuildVersion >= "7600") {
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetProcessMemoryInfo(
+BOOL WINAPI GetProcessMemoryInfo(                          // UInt
     _In_   HANDLE Process,                                 // Ptr
     _Out_  PPROCESS_MEMORY_COUNTERS ppsmemCounters,        // UInt
     _In_   DWORD cb                                        // UInt

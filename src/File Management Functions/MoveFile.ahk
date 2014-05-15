@@ -21,7 +21,7 @@ MoveFile("C:\Temp\TestFile.txt", "C:\Temp\TestFile_new.txt")
 
 
 /* C++ ==============================================================================
-BOOL WINAPI MoveFile(
+BOOL WINAPI MoveFile(                        // UInt
     _In_  LPCTSTR lpExistingFileName,        // Str
     _In_  LPCTSTR lpNewFileName              // Str
 );

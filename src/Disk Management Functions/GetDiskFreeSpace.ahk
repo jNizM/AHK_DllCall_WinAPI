@@ -31,7 +31,7 @@ MsgBox, % GetDiskFreeSpace("C:\") " Bytes`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetDiskFreeSpace(
+BOOL WINAPI GetDiskFreeSpace(                     // UInt
     _In_   LPCTSTR lpRootPathName,                // Str
     _Out_  LPDWORD lpSectorsPerCluster,           // UInt*
     _Out_  LPDWORD lpBytesPerSector,              // UInt*

@@ -26,7 +26,7 @@ MsgBox, % "pdwQuotaAllowed:`t" GetSystemRegistryQuota[1] " bytes`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetSystemRegistryQuota(
+BOOL WINAPI GetSystemRegistryQuota(           // UInt
     _Out_opt_  PDWORD pdwQuotaAllowed,        // UInt*
     _Out_opt_  PDWORD pdwQuotaUsed            // UInt*
 );

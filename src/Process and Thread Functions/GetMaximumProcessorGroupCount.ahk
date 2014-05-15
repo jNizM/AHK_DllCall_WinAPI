@@ -20,5 +20,5 @@ MsgBox, % GetMaximumProcessorGroupCount()
 
 
 /* C++ ==============================================================================
-WORD GetMaximumProcessorGroupCount(void);
+WORD GetMaximumProcessorGroupCount(void);        // UShort
 ================================================================================== */

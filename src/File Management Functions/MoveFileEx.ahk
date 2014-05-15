@@ -21,7 +21,7 @@ MoveFileEx("C:\Temp\TestFile.txt", "C:\Temp\TestFile_new.txt", 0x2)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI MoveFileEx(
+BOOL WINAPI MoveFileEx(                          // UInt
     _In_      LPCTSTR lpExistingFileName,        // Str
     _In_opt_  LPCTSTR lpNewFileName,             // Str
     _In_      DWORD dwFlags                      // UInt

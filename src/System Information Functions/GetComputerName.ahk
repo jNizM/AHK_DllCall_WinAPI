@@ -24,7 +24,7 @@ MsgBox, % GetComputerName()
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetComputerName(
+BOOL WINAPI GetComputerName(         // UInt
     _Out_    LPTSTR lpBuffer,        // Str
     _Inout_  LPDWORD lpnSize         // UInt*
 );

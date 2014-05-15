@@ -21,7 +21,7 @@ CopyFile("C:\Temp\TestFile.txt", "C:\Temp\TestFile_new.txt", 0)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI CopyFile(
+BOOL WINAPI CopyFile(                        // UInt
     _In_  LPCTSTR lpExistingFileName,        // Str
     _In_  LPCTSTR lpNewFileName,             // Str
     _In_  BOOL bFailIfExists                 // UInt

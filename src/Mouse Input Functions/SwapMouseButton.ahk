@@ -13,14 +13,16 @@ SwapMouseButton(fSwap)
 }
 ; ===================================================================================
 
-SwapMouseButton(1)
+SwapMouseButton(1)   ; Left-Hand
+sleep 10000
+SwapMouseButton(0)   ; Right-Hand
 
 
 
 
 
 /* C++ ==============================================================================
-BOOL WINAPI SwapMouseButton(
-    _In_  BOOL fSwap        // 
+BOOL WINAPI SwapMouseButton(        // UInt
+    _In_  BOOL fSwap                // UInt
 );
 ================================================================================== */

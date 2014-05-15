@@ -11,13 +11,13 @@ GetDurationFormat(ullDuration, lpFormat := "d'd':hh:mm:ss")
 {
     VarSetCapacity(lpDurationStr, 128, 0)
     DllCall("Kernel32.dll\GetDurationFormat"
-	         , "UInt", 0x400
-             , "UInt", 0
-             , "Ptr", 0
-             , "Int64", ullDuration * 10000000    ; Number of Seconds
-             , "WStr", lpFormat
-             , "WStr", lpDurationStr
-             , "Int", 64)
+	                     , "UInt",  0x400
+                         , "UInt",  0
+                         , "Ptr",   0
+                         , "Int64", ullDuration * 10000000    ; Number of Seconds
+                         , "WStr",  lpFormat
+                         , "WStr",  lpDurationStr
+                         , "Int",   64)
     return lpDurationStr
 }
 ; ===================================================================================
@@ -31,7 +31,7 @@ MsgBox, % GetDurationFormat(421337) "`n"
 
 
 /* C++ ==============================================================================
-int GetDurationFormat(
+int GetDurationFormat(                              // Int
     _In_       LCID Locale,                         // UInt
     _In_       DWORD dwFlags,                       // UInt
     _In_opt_   const SYSTEMTIME *lpDuration,        // Ptr

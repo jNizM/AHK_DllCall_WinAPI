@@ -25,7 +25,7 @@ MsgBox, % GetPhysicallyInstalledSystemMemory() " KB`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetPhysicallyInstalledSystemMemory(
-    _Out_  PULONGLONG TotalMemoryInKilobytes        // UInt64*
+BOOL WINAPI GetPhysicallyInstalledSystemMemory(        // UInt
+    _Out_  PULONGLONG TotalMemoryInKilobytes           // UInt64*
 );
 ================================================================================== */

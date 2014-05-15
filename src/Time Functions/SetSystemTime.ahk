@@ -25,7 +25,7 @@ SetSystemTime(2013, 12, 1, 2, 14, 42, 27, 724)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI SetSystemTime(
+BOOL WINAPI SetSystemTime(                      //                   UInt
     _In_  const SYSTEMTIME *lpSystemTime        //  (16)             Ptr
 );
 

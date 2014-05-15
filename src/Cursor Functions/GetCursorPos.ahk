@@ -29,7 +29,7 @@ MsgBox, % "GetCursorPos function`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetCursorPos(
+BOOL WINAPI GetCursorPos(         //                  UInt
     _Out_  LPPOINT lpPoint        //  (8)             Ptr
 );
 

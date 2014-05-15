@@ -35,7 +35,7 @@ MsgBox, % "GetCursorInfo function`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetCursorInfo(
+BOOL WINAPI GetCursorInfo(          //                              UInt
     _Inout_  PCURSORINFO pci        // (16 + A_PtrSize)             Ptr
 );
 

@@ -20,7 +20,7 @@ MsgBox, % GetActiveProcessorCount(0xffff)
 
 
 /* C++ ==============================================================================
-DWORD GetActiveProcessorCount(
-    _In_  WORD GroupNumber        // UShort
+DWORD GetActiveProcessorCount(        // UInt
+    _In_  WORD GroupNumber            // UShort
 );
 ================================================================================== */

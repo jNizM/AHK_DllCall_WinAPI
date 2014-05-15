@@ -38,7 +38,7 @@ MsgBox, % "GetLocalTime function`n"
 
 
 /* C++ ==============================================================================
-void WINAPI GetLocalTime(
+void WINAPI GetLocalTime(                   //                   Ptr
     _Out_  LPSYSTEMTIME lpSystemTime        //  (16)             Ptr
 );
 

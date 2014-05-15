@@ -36,7 +36,7 @@ MsgBox, % "FreeBytesAvailable:`t`t"       GetDiskFreeSpaceEx[1]   " Bytes`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetDiskFreeSpaceEx(
+BOOL WINAPI GetDiskFreeSpaceEx(                                // UInt
     _In_opt_   LPCTSTR lpDirectoryName,                        // Str
     _Out_opt_  PULARGE_INTEGER lpFreeBytesAvailable,           // Int64*
     _Out_opt_  PULARGE_INTEGER lpTotalNumberOfBytes,           // Int64*

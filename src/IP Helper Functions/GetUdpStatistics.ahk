@@ -31,7 +31,7 @@ MsgBox, % "GetUdpStatistics function`n"
 
 
 /* C++ ==============================================================================
-DWORD GetUdpStatistics(
+DWORD GetUdpStatistics(                //                  UInt
     _Out_  PMIB_UDPSTATS pStats        // (20)             UInt
 );
 

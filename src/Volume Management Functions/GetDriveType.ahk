@@ -20,7 +20,7 @@ MsgBox, % GetDriveType("C:\")
 
 
 /* C++ ==============================================================================
-UINT WINAPI GetDriveType(
+UINT WINAPI GetDriveType(                   // UInt
     _In_opt_  LPCTSTR lpRootPathName        // Str
 );
 ================================================================================== */

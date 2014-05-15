@@ -20,7 +20,7 @@ MsgBox, % GetMaximumProcessorCount(0xffff)
 
 
 /* C++ ==============================================================================
-DWORD GetMaximumProcessorCount(
-    _In_  WORD GroupNumber        // UShort
+DWORD GetMaximumProcessorCount(        // UInt
+    _In_  WORD GroupNumber             // UShort
 );
 ================================================================================== */

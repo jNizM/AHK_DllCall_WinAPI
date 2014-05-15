@@ -20,5 +20,5 @@ MsgBox, % GetCurrentThreadId()
 
 
 /* C++ ==============================================================================
-DWORD WINAPI GetCurrentThreadId(void);
+DWORD WINAPI GetCurrentThreadId(void);        // UInt
 ================================================================================== */

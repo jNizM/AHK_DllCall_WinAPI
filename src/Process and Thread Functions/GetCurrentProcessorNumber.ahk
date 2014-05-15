@@ -20,5 +20,5 @@ MsgBox, % GetCurrentProcessorNumber()
 
 
 /* C++ ==============================================================================
-DWORD WINAPI GetCurrentProcessorNumber(void);
+DWORD WINAPI GetCurrentProcessorNumber(void);        // UInt
 ================================================================================== */

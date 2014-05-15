@@ -23,7 +23,7 @@ MsgBox, % CharUpper("lower_to_upper")
 
 
 /* C++ ==============================================================================
-LPTSTR WINAPI CharUpper(
+LPTSTR WINAPI CharUpper(        // Str
     _Inout_  LPTSTR lpsz        // Str
 );
 ================================================================================== */

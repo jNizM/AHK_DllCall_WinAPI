@@ -38,7 +38,7 @@ MsgBox, % "GetSystemTime function`n"
 		
 
 /* C++ ==============================================================================
-void WINAPI GetSystemTime(
+void WINAPI GetSystemTime(                  //                   Ptr
     _Out_  LPSYSTEMTIME lpSystemTime        //  (16)             Ptr
 );
 

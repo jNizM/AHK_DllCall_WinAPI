@@ -20,5 +20,5 @@ MsgBox, % GetDoubleClickTime()
 
 
 /* C++ ==============================================================================
-UINT WINAPI GetDoubleClickTime(void);
+UINT WINAPI GetDoubleClickTime(void);        // UInt
 ================================================================================== */

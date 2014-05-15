@@ -20,5 +20,5 @@ MsgBox, % GetActiveProcessorGroupCount()
 
 
 /* C++ ==============================================================================
-WORD GetActiveProcessorGroupCount(void);
+WORD GetActiveProcessorGroupCount(void);        // UShort
 ================================================================================== */

@@ -20,8 +20,8 @@ SetCursorPos(750, 500)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI SetCursorPos(
-    _In_  int X,        // Int
-    _In_  int Y         // Int
+BOOL WINAPI SetCursorPos(        // UInt
+    _In_  int X,                 // Int
+    _In_  int Y                  // Int
 );
 ================================================================================== */

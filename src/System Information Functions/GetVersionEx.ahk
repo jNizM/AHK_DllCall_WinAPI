@@ -39,7 +39,7 @@ MsgBox, % "GetVersionEx function`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetVersionEx(
+BOOL WINAPI GetVersionEx(                         //                  UInt
     _Inout_  LPOSVERSIONINFO lpVersionInfo        // (284)            Ptr
 );
 

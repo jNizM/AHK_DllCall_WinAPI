@@ -25,7 +25,7 @@ MsgBox, % GetFileSizeEx("C:\Windows\notepad.exe") " Bytes"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetFileSizeEx(
+BOOL WINAPI GetFileSizeEx(                  // UInt
     _In_   HANDLE hFile,                    // UInt
     _Out_  PLARGE_INTEGER lpFileSize        // UInt - Int64*
 );

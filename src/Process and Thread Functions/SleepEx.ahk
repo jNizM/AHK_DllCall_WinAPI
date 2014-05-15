@@ -20,7 +20,7 @@ SleepEx(2000, 0)
 
 
 /* C++ ==============================================================================
-DWORD WINAPI SleepEx(
+DWORD WINAPI SleepEx(                  // UInt
     _In_  DWORD dwMilliseconds,        // UInt
     _In_  BOOL bAlertable              // UInt
 );

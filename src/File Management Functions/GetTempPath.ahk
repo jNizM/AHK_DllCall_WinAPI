@@ -25,7 +25,7 @@ MsgBox, % GetTempPath()
 
 
 /* C++ ==============================================================================
-DWORD WINAPI GetTempPath(
+DWORD WINAPI GetTempPath(              // UInt
     _In_   DWORD nBufferLength,        // UInt
     _Out_  LPTSTR lpBuffer             // Str
 );

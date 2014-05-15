@@ -29,13 +29,13 @@ MsgBox, % "GetPhysicalCursorPos function`n"
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetPhysicalCursorPos(
-    _Out_  LPPOINT lpPoint        //  (8)             Ptr
+BOOL WINAPI GetPhysicalCursorPos(        //                  UInt
+    _Out_  LPPOINT lpPoint               //  (8)             Ptr
 );
 
 
 typedef struct tagPOINT {
-    LONG x;                       //  4 =>   0        Int
-    LONG y;                       //  4 =>   4        Int
+    LONG x;                              //  4 =>   0        Int
+    LONG y;                              //  4 =>   4        Int
 } POINT, *PPOINT;
 ================================================================================== */

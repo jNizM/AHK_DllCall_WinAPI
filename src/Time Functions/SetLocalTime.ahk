@@ -25,7 +25,7 @@ SetLocalTime(2013, 12, 1, 2, 14, 42, 27, 724)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI SetLocalTime(
+BOOL WINAPI SetLocalTime(                       //                   UInt
     _In_  const SYSTEMTIME *lpSystemTime        //  (16)             Ptr
 );
 

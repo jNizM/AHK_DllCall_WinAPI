@@ -20,7 +20,7 @@ MsgBox, % GetKeyboardLayout(0)
 
 
 /* C++ ==============================================================================
-HKL WINAPI GetKeyboardLayout(
-    _In_  DWORD idThread        // UInt
+HKL WINAPI GetKeyboardLayout(        // Ptr
+    _In_  DWORD idThread             // UInt
 );
 ================================================================================== */

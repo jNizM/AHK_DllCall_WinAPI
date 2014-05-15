@@ -20,7 +20,7 @@ SetDoubleClickTime(500)
 
 
 /* C++ ==============================================================================
-BOOL WINAPI SetDoubleClickTime(
-    _In_  UINT uInterval        // UInt
+BOOL WINAPI SetDoubleClickTime(        // UInt
+    _In_  UINT uInterval               // UInt
 );
 ================================================================================== */

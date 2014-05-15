@@ -24,7 +24,7 @@ MsgBox, % GetUserName()
 
 
 /* C++ ==============================================================================
-BOOL WINAPI GetUserName(
+BOOL WINAPI GetUserName(             // UInt
     _Out_    LPTSTR lpBuffer,        // Str
     _Inout_  LPDWORD lpnSize         // UInt*
 );

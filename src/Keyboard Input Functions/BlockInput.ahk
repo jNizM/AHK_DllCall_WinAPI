@@ -22,7 +22,7 @@ BlockInput(0)        ; Keyboard and Mouse input events are unblocked.
 
 
 /* C++ ==============================================================================
-BOOL WINAPI BlockInput(
+BOOL WINAPI BlockInput(        // UInt
     _In_  BOOL fBlockIt        // UInt
 );
 ================================================================================== */

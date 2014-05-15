@@ -21,7 +21,7 @@ DeleteFile("C:\Temp\TestFile.txt")
 
 
 /* C++ ==============================================================================
-BOOL WINAPI DeleteFile(
+BOOL WINAPI DeleteFile(             // UInt
     _In_  LPCTSTR lpFileName        // Str
 );
 ================================================================================== */

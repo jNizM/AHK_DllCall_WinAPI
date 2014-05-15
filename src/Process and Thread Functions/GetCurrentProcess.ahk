@@ -20,5 +20,5 @@ MsgBox, % GetCurrentProcess()
 
 
 /* C++ ==============================================================================
-HANDLE WINAPI GetCurrentProcess(void);
+HANDLE WINAPI GetCurrentProcess(void);        // Ptr
 ================================================================================== */

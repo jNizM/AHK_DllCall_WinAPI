@@ -44,7 +44,7 @@ MsgBox, % "GetTcpStatistics function`n"
 
 
 /* C++ ==============================================================================
-DWORD GetTcpStatistics(
+DWORD GetTcpStatistics(                //                  UInt
     _Out_  PMIB_TCPSTATS pStats        // (60)             UInt
 );
 

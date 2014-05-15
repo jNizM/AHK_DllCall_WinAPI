@@ -31,7 +31,7 @@ MsgBox, % (E - S) / F
 
 
 /* C++ ==============================================================================
-BOOL WINAPI QueryPerformanceCounter(
+BOOL WINAPI QueryPerformanceCounter(                // UInt
     _Out_  LARGE_INTEGER *lpPerformanceCount        // Int64*
 );
 ================================================================================== */

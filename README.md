@@ -21,6 +21,8 @@ AHK --> DllCall --> WinAPI
 
 ### Error Handling Functions
 * [Beep](src/Error Handling Functions/Beep.ahk)
+* [FormatMessage](src/Error Handling Functions/FormatMessage.ahk)
+* [GetLastError](src/Error Handling Functions/GetLastError.ahk)
 
 ### File Management Functions
 * [CopyFile](src/File Management Functions/CopyFile.ahk)
@@ -78,6 +80,7 @@ AHK --> DllCall --> WinAPI
 * [SleepEx](src/Process and Thread Functions/SleepEx.ahk)
 
 ### PSAPI Functions
+* [GetModuleFileNameEx](src/PSAPI Functions/GetModuleFileNameEx.ahk)
 * [GetProcessMemoryInfo](src/PSAPI Functions/GetProcessMemoryInfo.ahk)
 
 ### String Functions

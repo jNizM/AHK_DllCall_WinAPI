@@ -20,7 +20,7 @@ OpenClipboard()
 
 
 /* C++ ==============================================================================
-BOOL WINAPI OpenClipboard(
+BOOL WINAPI OpenClipboard(             // UInt
     _In_opt_  HWND hWndNewOwner        // Ptr
 );
 ================================================================================== */

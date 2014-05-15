@@ -24,8 +24,8 @@ MsgBox, % GetWindowsDirectory()
 
 
 /* C++ ==============================================================================
-UINT WINAPI GetWindowsDirectory(
-    _Out_  LPTSTR lpBuffer,        // Str
-    _In_   UINT uSize              // UInt
+UINT WINAPI GetWindowsDirectory(        // UInt
+    _Out_  LPTSTR lpBuffer,             // Str
+    _In_   UINT uSize                   // UInt
 );
 ================================================================================== */

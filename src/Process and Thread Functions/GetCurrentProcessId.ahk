@@ -20,5 +20,5 @@ MsgBox, % GetCurrentProcessId()
 
 
 /* C++ ==============================================================================
-DWORD WINAPI GetCurrentProcessId(void);
+DWORD WINAPI GetCurrentProcessId(void);        // UInt
 ================================================================================== */
