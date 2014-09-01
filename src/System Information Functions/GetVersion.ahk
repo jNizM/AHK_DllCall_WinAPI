@@ -10,8 +10,8 @@
 GetVersion()
 {
     return { 1 : LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-	       , 2 : HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-		   , 3 : HIWORD(DllCall("Kernel32.dll\GetVersion")) }
+           , 2 : HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
+           , 3 : HIWORD(DllCall("Kernel32.dll\GetVersion")) }
 }
 LOWORD(l)
 {
