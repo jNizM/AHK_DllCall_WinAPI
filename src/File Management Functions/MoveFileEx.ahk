@@ -1,29 +1,31 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: MoveFileEx
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........: MoveFileExW (Unicode) and MoveFileExA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa365240(v=vs.85).aspx
-; =================================================================================================
-MoveFileEx(lpExistingFileName, lpNewFileName, dwFlags)
+; Links.........: https://msdn.microsoft.com/en-us/library/aa365240.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/aa365240.aspx
+; ===============================================================================================================================
+MoveFileEx(ExistingFileName, NewFileName, Flags)
 {
-    DllCall("Kernel32.dll\MoveFileEx", "Str", lpExistingFileName, "Str", lpNewFileName, "UInt", dwFlags)
+    if !(DllCall("kernel32.dll\MoveFileEx", "Str", ExistingFileName, "Str", NewFileName, "UInt", Flags))
+        return DllCall("kernel32.dll\GetLastError")
+    return 1
 }
+; ===============================================================================================================================
 
-; ===================================================================================
-
-MoveFileEx("C:\Temp\TestFile.txt", "C:\Temp\TestFile_new.txt", 0x2)
-
+MoveFileEx("C:\Temp\TestFile.txt", "C:\Temp\TestFile_MoveEx.txt", 2)
 
 
 
 
-/* C++ ==============================================================================
-BOOL WINAPI MoveFileEx(                          // UInt
-    _In_      LPCTSTR lpExistingFileName,        // Str
-    _In_opt_  LPCTSTR lpNewFileName,             // Str
-    _In_      DWORD dwFlags                      // UInt
+
+/* C++ ==========================================================================================================================
+BOOL WINAPI MoveFileEx(                                                              // UInt
+    _In_      LPCTSTR lpExistingFileName,                                            // Str
+    _In_opt_  LPCTSTR lpNewFileName,                                                 // Str
+    _In_      DWORD dwFlags                                                          // UInt
 );
-================================================================================== */
+============================================================================================================================== */

@@ -15,6 +15,11 @@ AHK --> DllCall --> WinAPI
 * [SetCursorPos](src/Cursor Functions/SetCursorPos.ahk)
 * [SetPhysicalCursorPos](src/Cursor Functions/SetPhysicalCursorPos.ahk)
 
+### Directory Management Functions
+* [CreateDirectory](src/Directory Management Functions/CreateDirectory.ahk)
+* [RemoveDirectory](src/Directory Management Functions/RemoveDirectory.ahk)
+* [SetCurrentDirectory](src/Directory Management Functions/SetCurrentDirectory.ahk)
+
 ### Disk Management Functions
 * [GetDiskFreeSpace](src/Disk Management Functions/GetDiskFreeSpace.ahk)
 * [GetDiskFreeSpaceEx](src/Disk Management Functions/GetDiskFreeSpaceEx.ahk)
@@ -52,6 +57,7 @@ AHK --> DllCall --> WinAPI
 * [GlobalMemoryStatusEx](src/Memory Management Functions/GlobalMemoryStatusEx.ahk)
 
 ### Mouse Input Functions
+* [ClipCursor](src/Mouse Input Functions/ClipCursor.ahk)
 * [GetCapture](src/Mouse Input Functions/GetCapture.ahk)
 * [GetDoubleClickTime](src/Mouse Input Functions/GetDoubleClickTime.ahk)
 * [ReleaseCapture](src/Mouse Input Functions/ReleaseCapture.ahk)
@@ -97,6 +103,7 @@ AHK --> DllCall --> WinAPI
 * [GetSystemWindowsDirectory](src/System Information Functions/GetSystemWindowsDirectory.ahk)
 * [GetSystemWow64Directory](src/System Information Functions/GetSystemWow64Directory.ahk)
 * [GetUserName](src/System Information Functions/GetUserName.ahk)
+* [GetUserNameEx](src/System Information Functions/GetUserNameEx.ahk)
 * [GetVersion](src/System Information Functions/GetVersion.ahk)
 * [GetVersionEx](src/System Information Functions/GetVersionEx.ahk)
 * [GetWindowsDirectory](src/System Information Functions/GetWindowsDirectory.ahk)
@@ -130,4 +137,4 @@ AHK --> DllCall --> WinAPI
 
 
 ## Copyright and License
-[WTFPL License](LICENSE)
+[Unlicense](LICENSE)

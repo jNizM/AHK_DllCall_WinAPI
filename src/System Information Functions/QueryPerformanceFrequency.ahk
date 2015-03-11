@@ -1,37 +1,37 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: QueryPerformanceFrequency
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms644905(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/library/ms644905.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms644905.aspx
+; ===============================================================================================================================
 QueryPerformanceFrequency()
 {
-    if DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", lpFrequency)
-    {
-        return lpFrequency
-    }
+    if !(DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", Frequency))
+        return DllCall("kernel32.dll\GetLastError")
+    return Frequency
 }
-; ===================================================================================
+; ===============================================================================================================================
 
 MsgBox % QueryPerformanceFrequency()
 
 
-DllCall("Kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
-DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", S)
+DllCall("kernel32.dll\QueryPerformanceFrequency", "Int64*", F)
+DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", S)
 loop 10000000
     i++
-DllCall("Kernel32.dll\QueryPerformanceCounter", "Int64*", E)
-MsgBox, % (E - S) / F
+DllCall("kernel32.dll\QueryPerformanceCounter", "Int64*", E)
+MsgBox % (E - S) / F
 
 
 
 
 
-/* C++ ==============================================================================
-BOOL WINAPI QueryPerformanceFrequency(        // UInt
-    _Out_  LARGE_INTEGER *lpFrequency         // Int64*
+/* C++ ==========================================================================================================================
+BOOL WINAPI QueryPerformanceFrequency(                                               // UInt
+    _Out_  LARGE_INTEGER *lpFrequency                                                // Int64*
 );
-================================================================================== */
+============================================================================================================================== */

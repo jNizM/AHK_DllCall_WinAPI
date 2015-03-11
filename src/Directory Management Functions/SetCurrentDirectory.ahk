@@ -1,29 +1,29 @@
 ﻿; ===============================================================================================================================
-; Function......: SetDoubleClickTime
-; DLL...........: User32.dll
-; Library.......: User32.lib
-; U/ANSI........:
+; Function......: SetCurrentDirectory
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: SetCurrentDirectoryW (Unicode) and SetCurrentDirectoryA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: https://msdn.microsoft.com/en-us/library/ms646263.aspx
-;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms646263.aspx
+; Links.........: https://msdn.microsoft.com/en-us/library/aa365530.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/aa365530.aspx
 ; ===============================================================================================================================
-SetDoubleClickTime(Interval)
+SetCurrentDirectory(PathName)
 {
-    if !(DllCall("user32.dll\SetDoubleClickTime", "UInt", Interval))
+    if !(DllCall("kernel32.dll\SetCurrentDirectory", "Str", PathName))
         return DllCall("kernel32.dll\GetLastError")
     return 1
 }
 ; ===============================================================================================================================
 
-SetDoubleClickTime(500)
+SetCurrentDirectory("C:\Temp\Directory")
 
 
 
 
 
 /* C++ ==========================================================================================================================
-BOOL WINAPI SetDoubleClickTime(                                                      // UInt
-    _In_  UINT uInterval                                                             // UInt
+BOOL WINAPI SetCurrentDirectory(                                                     // UInt
+    _In_  LPCTSTR lpPathName                                                         // Str
 );
 ============================================================================================================================== */

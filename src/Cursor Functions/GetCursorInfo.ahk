@@ -1,54 +1,67 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: GetCursorInfo
 ; DLL...........: User32.dll
 ; Library.......: User32.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms648389(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/library/ms648389.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms648389.aspx
+; ===============================================================================================================================
 GetCursorInfo()
 {
     static PtrSize := A_PtrSize
-    static CURSORINFO, init := VarSetCapacity(CURSORINFO, PtrSize + 16, 0) && NumPut(PtrSize + 16, CURSORINFO, "UInt")
-    if (DllCall("User32.dll\GetCursorInfo", "Ptr", &CURSORINFO))
-    {
-        return { 1 : NumGet(CURSORINFO, 0, "UInt"), 2 : NumGet(CURSORINFO, 4, "UInt"), 3 : NumGet(CURSORINFO, 8, "Ptr")
-               , 4 : NumGet(CURSORINFO, PtrSize + 8, "Int"), 5 : NumGet(CURSORINFO, PtrSize + 12, "Int") }
-    }
+    static CURSORINFO, size := 16 + PtrSize, init := VarSetCapacity(CURSORINFO, size, 0) && NumPut(size, CURSORINFO, "UInt")
+    if !(DllCall("user32.dll\GetCursorInfo", "Ptr", &CURSORINFO))
+        return DllCall("kernel32.dll\GetLastError")
+    return { 1 : NumGet(CURSORINFO, 0, "UInt"), 2 : NumGet(CURSORINFO, 4, "UInt"), 3 : NumGet(CURSORINFO, 8, "Ptr")
+           , 4 : NumGet(CURSORINFO, 8 + PtrSize, "Int"), 5 : NumGet(CURSORINFO, 12 + PtrSize, "Int") }
 }
-; ===================================================================================
+; ===============================================================================================================================
 
 GetCursorInfo := GetCursorInfo()
 
-MsgBox, % "GetCursorInfo function`n"
-        . "CURSORINFO structure`n"
-        . "POINT structure`n`n"
-        . "cbSize:`t`t`t"         GetCursorInfo[1]   "`n"
-        . "flags:`t`t`t"          GetCursorInfo[2]   "`n"
-        . "hCursor:`t`t`t"        GetCursorInfo[3]   "`n"
-        . "x-coordinate:`t`t"     GetCursorInfo[4]   "`n"
-        . "y-coordinate:`t`t"     GetCursorInfo[5]
+MsgBox % "GetCursorInfo function`n"
+       . "CURSORINFO structure`n"
+       . "POINT structure`n`n"
+       . "cbSize:`t`t`t"         GetCursorInfo[1]   "`n"
+       . "flags:`t`t`t"          GetCursorInfo[2]   "`n"
+       . "hCursor:`t`t`t"        GetCursorInfo[3]   "`n"
+       . "x-coordinate:`t`t"     GetCursorInfo[4]   "`n"
+       . "y-coordinate:`t`t"     GetCursorInfo[5]
 
 
 
 
 
-/* C++ ==============================================================================
-BOOL WINAPI GetCursorInfo(          //                              UInt
-    _Inout_  PCURSORINFO pci        // (16 + A_PtrSize)             Ptr
+/* C++ ==========================================================================================================================
+BOOL WINAPI GetCursorInfo(                                                           // UInt
+    _Inout_  PCURSORINFO pci                                                         // Ptr        (16 + A_PtrSize)
 );
 
 
 typedef struct {
-    DWORD   cbSize;                 //  4 =>   0                    UInt
-    DWORD   flags;                  //  4 =>   4                    UInt
-    HCURSOR hCursor;                //  4 =>   8                    Ptr
-    POINT   ptScreenPos;            //  ==> POINT
+    DWORD   cbSize;                                                                  // UInt        4          =>   0
+    DWORD   flags;                                                                   // UInt        4          =>   4
+    HCURSOR hCursor;                                                                 // Ptr         A_PtrSize  =>   8
+    POINT   ptScreenPos;                                                             // ==> POINT
 } CURSORINFO, *PCURSORINFO, *LPCURSORINFO;
 
 typedef struct tagPOINT {
-    LONG x;                         //  4 =>   8 + A_PtrSize        Int
-    LONG y;                         //  4 =>  12 + A_PtrSize        Int
+    LONG x;                                                                          // Int         4          =>   8 + A_PtrSize
+    LONG y;                                                                          // Int         4          =>  12 + A_PtrSize
 } POINT, *PPOINT;
-================================================================================== */
+============================================================================================================================== */
+
+/*
+
+------------------------------------------------------------------------
+| Element (Field) Name | Element Type | Element Width | Element Offset |
+|----------------------------------------------------------------------|
+| hProcess             | HANDLE       |             4 |              0 |
+| hThread              | HANDLE       |             4 |              4 |
+| dwProcessId          | DWORD        |             4 |              8 |
+| dwThreadId           | DWORD        |             4 |             12 |
+------------------------------------------------------------------------
+
+*/

@@ -1,31 +1,31 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: GetSystemWow64Directory
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........: GetSystemWow64DirectoryW (Unicode) and GetSystemWow64DirectoryA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724405(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/library/ms724405.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms724405.aspx
+; ===============================================================================================================================
 GetSystemWow64Directory()
 {
-    static lpnSize := VarSetCapacity(lpBuffer, 260, 0)
-    if DllCall("Kernel32.dll\GetSystemWow64Directory", "Str", lpBuffer, "UInt", lpnSize)
-    {
-        return lpBuffer
-    }
+    static size := VarSetCapacity(buf, 260, 0)
+    if !(DllCall("kernel32.dll\GetSystemWow64Directory", "Ptr", &buf, "UInt", size))
+        return DllCall("kernel32.dll\GetLastError")
+    return StrGet(&buf, size, "UTF-16")
 }
-; ===================================================================================
+; ===============================================================================================================================
 
-MsgBox, % GetSystemWow64Directory()
-
-
+MsgBox % GetSystemWow64Directory()
 
 
 
-/* C++ ==============================================================================
-UINT WINAPI GetSystemWow64Directory(        // UInt
-  _Out_  LPTSTR lpBuffer,                   // Str
-  _In_   UINT uSize                         // UInt
+
+
+/* C++ ==========================================================================================================================
+UINT WINAPI GetSystemWow64Directory(                                                 // UInt
+  _Out_  LPTSTR lpBuffer,                                                            // Ptr (Str)
+  _In_   UINT uSize                                                                  // UInt
 );
-================================================================================== */
+============================================================================================================================== */

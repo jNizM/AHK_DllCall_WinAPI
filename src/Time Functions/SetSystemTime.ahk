@@ -1,43 +1,46 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: SetSystemTime
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724942(v=vs.85).aspx
-; =================================================================================================
-SetSystemTime(wYear = 1601, wMonth = 1, wDayOfWeek = 0, wDay = 1, wHour = 0, wMinute = 0, wSecond = 0, wMilliseconds = 0)
+; Links.........: https://msdn.microsoft.com/en-us/library/ms724942.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms724942.aspx
+; ===============================================================================================================================
+SetSystemTime(Year := 1601, Month := 1, DayOfWeek := 0, Day := 1, Hour := 0, Minute := 0, Second := 0, Milliseconds := 0)
 {
-    VarSetCapacity(SYSTEMTIME, 16)
-    , NumPut(wYear,      SYSTEMTIME,  0, "UShort"), NumPut(wMonth,        SYSTEMTIME,  2, "UShort")
-    , NumPut(wDayOfWeek, SYSTEMTIME,  4, "UShort"), NumPut(wDay,          SYSTEMTIME,  6, "UShort")
-    , NumPut(wHour,      SYSTEMTIME,  8, "UShort"), NumPut(wMinute,       SYSTEMTIME, 10, "UShort")
-    , NumPut(wSecond,    SYSTEMTIME, 12, "UShort"), NumPut(wMilliseconds, SYSTEMTIME, 14, "UShort")
-    DllCall("Kernel32.dll\SetSystemTime", "Ptr", &SYSTEMTIME)
+    static VarSetCapacity(SYSTEMTIME, 16)
+    , NumPut(Year,      SYSTEMTIME,  0, "UShort"), NumPut(Month,        SYSTEMTIME,  2, "UShort")
+    , NumPut(DayOfWeek, SYSTEMTIME,  4, "UShort"), NumPut(Day,          SYSTEMTIME,  6, "UShort")
+    , NumPut(Hour,      SYSTEMTIME,  8, "UShort"), NumPut(Minute,       SYSTEMTIME, 10, "UShort")
+    , NumPut(Second,    SYSTEMTIME, 12, "UShort"), NumPut(Milliseconds, SYSTEMTIME, 14, "UShort")
+    if !(DllCall("kernel32.dll\SetSystemTime", "Ptr", &SYSTEMTIME))
+        return DllCall("kernel32.dll\GetLastError")
+    return 1
 }
-; ===================================================================================
+; ===============================================================================================================================
 
-SetSystemTime(2013, 12, 1, 2, 14, 42, 27, 724)
-
-
+SetSystemTime(2015, 1, 25, 7, 13, 37, 27, 724)
 
 
 
-/* C++ ==============================================================================
-BOOL WINAPI SetSystemTime(                      //                   UInt
-    _In_  const SYSTEMTIME *lpSystemTime        //  (16)             Ptr
+
+
+/* C++ ==========================================================================================================================
+BOOL WINAPI SetSystemTime(                                                           // UInt
+    _In_  const SYSTEMTIME *lpSystemTime                                             // Ptr        (16)
 );
 
 
 typedef struct _SYSTEMTIME {
-    WORD wYear;                                 //   2 =>   0
-    WORD wMonth;                                //   2 =>   2        UShort
-    WORD wDayOfWeek;                            //   2 =>   4        UShort
-    WORD wDay;                                  //   2 =>   6        UShort
-    WORD wHour;                                 //   2 =>   8        UShort
-    WORD wMinute;                               //   2 =>  10        UShort
-    WORD wSecond;                               //   2 =>  12        UShort
-    WORD wMilliseconds;                         //   2 =>  14        UShort
+    WORD wYear;                                                                      // UShort      2          =>   0
+    WORD wMonth;                                                                     // UShort      2          =>   2
+    WORD wDayOfWeek;                                                                 // UShort      2          =>   4
+    WORD wDay;                                                                       // UShort      2          =>   6
+    WORD wHour;                                                                      // UShort      2          =>   8
+    WORD wMinute;                                                                    // UShort      2          =>  10
+    WORD wSecond;                                                                    // UShort      2          =>  12
+    WORD wMilliseconds;                                                              // UShort      2          =>  14
 } SYSTEMTIME, *PSYSTEMTIME;
-================================================================================== */
+============================================================================================================================== */

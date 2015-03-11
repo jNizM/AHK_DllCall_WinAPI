@@ -1,24 +1,27 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: GetMaximumProcessorGroupCount
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/dd405490(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/library/dd405490.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/dd405490.aspx
+; ===============================================================================================================================
 GetMaximumProcessorGroupCount()
 {
-    return DllCall("Kernel32.dll\GetMaximumProcessorGroupCount")
+    if !(ret := DllCall("kernel32.dll\GetMaximumProcessorGroupCount"))
+        return DllCall("kernel32.dll\GetLastError")
+    return ret
 }
-; ===================================================================================
+; ===============================================================================================================================
 
-MsgBox, % GetMaximumProcessorGroupCount()
-
-
+MsgBox % GetMaximumProcessorGroupCount()
 
 
 
-/* C++ ==============================================================================
-WORD GetMaximumProcessorGroupCount(void);        // UShort
-================================================================================== */
+
+
+/* C++ ==========================================================================================================================
+WORD GetMaximumProcessorGroupCount(void);                                            // UShort
+============================================================================================================================== */

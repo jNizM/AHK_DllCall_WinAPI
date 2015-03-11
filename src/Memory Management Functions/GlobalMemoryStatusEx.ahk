@@ -1,25 +1,25 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: GlobalMemoryStatusEx
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/desktop/aa366589.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589.aspx
+; ===============================================================================================================================
 GlobalMemoryStatusEx()
 {
     static MEMORYSTATUSEX, init := VarSetCapacity(MEMORYSTATUSEX, 64, 0) && NumPut(64, MEMORYSTATUSEX, "UInt")
-    if (DllCall("Kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
-    {
-        return { 1 : NumGet(MEMORYSTATUSEX,  0, "UInt"),   2 : NumGet(MEMORYSTATUSEX,  4, "UInt")
-               , 3 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 4 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
-               , 5 : NumGet(MEMORYSTATUSEX, 24, "UInt64"), 6 : NumGet(MEMORYSTATUSEX, 32, "UInt64")
-               , 7 : NumGet(MEMORYSTATUSEX, 40, "UInt64"), 8 : NumGet(MEMORYSTATUSEX, 48, "UInt64")
-               , 9 : NumGet(MEMORYSTATUSEX, 56, "UInt64") }
-    }
+    if !(DllCall("kernel32.dll\GlobalMemoryStatusEx", "Ptr", &MEMORYSTATUSEX))
+		return DllCall("kernel32.dll\GetLastError")
+    return { 1 : NumGet(MEMORYSTATUSEX,  0, "UInt"),   2 : NumGet(MEMORYSTATUSEX,  4, "UInt")
+           , 3 : NumGet(MEMORYSTATUSEX,  8, "UInt64"), 4 : NumGet(MEMORYSTATUSEX, 16, "UInt64")
+           , 5 : NumGet(MEMORYSTATUSEX, 24, "UInt64"), 6 : NumGet(MEMORYSTATUSEX, 32, "UInt64")
+           , 7 : NumGet(MEMORYSTATUSEX, 40, "UInt64"), 8 : NumGet(MEMORYSTATUSEX, 48, "UInt64")
+           , 9 : NumGet(MEMORYSTATUSEX, 56, "UInt64") }
 }
-; ===================================================================================
+; ===============================================================================================================================
 
 GlobalMemoryStatusEx := GlobalMemoryStatusEx()
 
@@ -39,21 +39,21 @@ MsgBox, % "GlobalMemoryStatusEx function`n"
 
 
 
-/* C++ ==============================================================================
-BOOL WINAPI GlobalMemoryStatusEx(             //                  UInt
-    _Inout_  LPMEMORYSTATUSEX lpBuffer        // (64)             Ptr
+/* C++ ==========================================================================================================================
+BOOL WINAPI GlobalMemoryStatusEx(                                                    // UInt
+    _Inout_  LPMEMORYSTATUSEX lpBuffer                                               // Ptr        (64)
 );
 
 
 typedef struct _MEMORYSTATUSEX {
-    DWORD     dwLength;                       //  4 =>   0        UInt
-    DWORD     dwMemoryLoad;                   //  4 =>   4        UInt
-    DWORDLONG ullTotalPhys;                   //  8 =>   8        UInt64
-    DWORDLONG ullAvailPhys;                   //  8 =>  16        UInt64
-    DWORDLONG ullTotalPageFile;               //  8 =>  24        UInt64
-    DWORDLONG ullAvailPageFile;               //  8 =>  32        UInt64
-    DWORDLONG ullTotalVirtual;                //  8 =>  40        UInt64
-    DWORDLONG ullAvailVirtual;                //  8 =>  48        UInt64
-    DWORDLONG ullAvailExtendedVirtual;        //  8 =>  56        UInt64
+    DWORD     dwLength;                                                              // UInt        4          =>   0
+    DWORD     dwMemoryLoad;                                                          // UInt        4          =>   4
+    DWORDLONG ullTotalPhys;                                                          // UInt64      8          =>   8
+    DWORDLONG ullAvailPhys;                                                          // UInt64      8          =>  16
+    DWORDLONG ullTotalPageFile;                                                      // UInt64      8          =>  24
+    DWORDLONG ullAvailPageFile;                                                      // UInt64      8          =>  32
+    DWORDLONG ullTotalVirtual;                                                       // UInt64      8          =>  40
+    DWORDLONG ullAvailVirtual;                                                       // UInt64      8          =>  48
+    DWORDLONG ullAvailExtendedVirtual;                                               // UInt64      8          =>  56
 } MEMORYSTATUSEX, *LPMEMORYSTATUSEX;
-================================================================================== */
+============================================================================================================================== */

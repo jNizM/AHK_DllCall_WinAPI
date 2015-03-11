@@ -1,17 +1,18 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: GetVersion
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........:
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724439(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/library/ms724439.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms724439.aspx
+; ===============================================================================================================================
 GetVersion()
 {
-    return { 1 : LOBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-           , 2 : HIBYTE(LOWORD(DllCall("Kernel32.dll\GetVersion")))
-           , 3 : HIWORD(DllCall("Kernel32.dll\GetVersion")) }
+    return { 1 : LOBYTE(LOWORD(DllCall("kernel32.dll\GetVersion")))
+           , 2 : HIBYTE(LOWORD(DllCall("kernel32.dll\GetVersion")))
+           , 3 : HIWORD(DllCall("kernel32.dll\GetVersion")) }
 }
 LOWORD(l)
 {
@@ -29,34 +30,37 @@ HIBYTE(w)
 {
     return (w >> 8) & 0xff
 }
-; ===================================================================================
+; ===============================================================================================================================
 
 GetVersion := GetVersion()
-MsgBox, % "Major:`t"     GetVersion[1]   "`n"
-        . "Minor:`t"     GetVersion[2]   "`n"
-        . "Build:`t"     GetVersion[3]
+MsgBox % "Major:`t"     GetVersion[1]   "`n"
+       . "Minor:`t"     GetVersion[2]   "`n"
+       . "Build:`t"     GetVersion[3]
 
 
-MajorVersion := DllCall("Kernel32.dll\GetVersion") & 0xff
-MinorVersion := DllCall("Kernel32.dll\GetVersion") >> 8 & 0xff
-BuildVersion := DllCall("Kernel32.dll\GetVersion") >> 16 & 0xffff
+MajorVersion := DllCall("kernel32.dll\GetVersion") & 0xff
+MinorVersion := DllCall("kernel32.dll\GetVersion") >> 8 & 0xff
+BuildVersion := DllCall("kernel32.dll\GetVersion") >> 16 & 0xffff
 
-MsgBox, % MajorVersion "." MinorVersion "." BuildVersion
+MsgBox % MajorVersion "." MinorVersion "." BuildVersion
+
+MsgBox % ((GV := DllCall("kernel32.dll\GetVersion") & 0xFFFF) & 0xFF) (GV >> 8)
+MsgBox % ((m := (b := DllCall("kernel32.dll\GetVersion")) & 0xFFFF) & 0xFF) "." (m >> 8) "." (b >> 16)
 
 
 
 
 
-/* C++ ==============================================================================
-DWORD WINAPI GetVersion(void);        // UInt
+/* C++ ==========================================================================================================================
+DWORD WINAPI GetVersion(void);                                                       // UInt
 
 
 void main()
 {
-    DWORD dwVersion = 0;              // UInt
-    DWORD dwMajorVersion = 0;         // UInt
-    DWORD dwMinorVersion = 0;         // UInt
-    DWORD dwBuild = 0;                // UInt
+    DWORD dwVersion = 0;
+    DWORD dwMajorVersion = 0;
+    DWORD dwMinorVersion = 0;
+    DWORD dwBuild = 0;
 
     dwVersion = GetVersion();
 
@@ -70,4 +74,4 @@ void main()
 
     printf("Version is %d.%d (%d)\n", dwMajorVersion, dwMinorVersion, dwBuild);
 }
- ================================================================================= */
+============================================================================================================================== */

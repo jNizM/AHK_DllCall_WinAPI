@@ -1,30 +1,29 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: CharUpperBuff
 ; DLL...........: User32.dll
 ; Library.......: User32.lib
 ; U/ANSI........: CharUpperBuffW (Unicode) and CharUpperBuffA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms647475(v=vs.85).aspx
-; =================================================================================================
-CharUpperBuff(lpsz)
+; Links.........: https://msdn.microsoft.com/en-us/library/ms647475.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms647475.aspx
+; ===============================================================================================================================
+CharUpperBuff(str, len)
 {
-    if DllCall("User32.dll\CharUpperBuff", "Str", lpsz, "UInt", StrLen(lpsz))
-    {
-        return lpsz
-    }
+    if (DllCall("user32.dll\CharUpperBuff", "Ptr", &str, "UInt", len) = len)
+        return StrGet(&str)
 }
-; ===================================================================================
+; ===============================================================================================================================
 
-MsgBox, % CharUpperBuff("lower_to_upper")
-
-
+MsgBox % CharUpperBuff("lower_to_upper", 5)
 
 
 
-/* C++ ==============================================================================
-DWORD WINAPI CharUpperBuff(         // UInt
-    _Inout_  LPTSTR lpsz,           // Str
-    _In_     DWORD cchLength        // UInt
+
+
+/* C++ ==========================================================================================================================
+DWORD WINAPI CharUpperBuff(                                                          // UInt
+    _Inout_  LPTSTR lpsz,                                                            // Str
+    _In_     DWORD cchLength                                                         // UInt
 );
-================================================================================== */
+============================================================================================================================== */

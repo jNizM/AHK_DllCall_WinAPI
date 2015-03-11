@@ -1,31 +1,31 @@
-﻿; =================================================================================================
+﻿; ===============================================================================================================================
 ; Function......: GetComputerName
 ; DLL...........: Kernel32.dll
 ; Library.......: Kernel32.lib
 ; U/ANSI........: GetComputerNameW (Unicode) and GetComputerNameA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: http://msdn.microsoft.com/en-us/library/windows/desktop/ms724295(v=vs.85).aspx
-; =================================================================================================
+; Links.........: https://msdn.microsoft.com/en-us/library/ms724295.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms724295.aspx
+; ===============================================================================================================================
 GetComputerName()
 {
-    static lpnSize := VarSetCapacity(lpBuffer, 64, 0) + 1
-    if DllCall("Kernel32.dll\GetComputerName", "Str", lpBuffer, "UInt*", lpnSize)
-    {
-        return lpBuffer
-    }
+    static size := 31 + 1 * (A_IsUnicode ? 2 : 1), init := VarSetCapacity(buf, size, 0)
+    if !(DllCall("kernel32.dll\GetComputerName", "Ptr", &buf, "UInt*", size))
+        return DllCall("kernel32.dll\GetLastError")
+    return StrGet(&buf, size, "UTF-16")
 }
-; ===================================================================================
+; ===============================================================================================================================
 
-MsgBox, % GetComputerName()
-
-
+MsgBox % GetComputerName()
 
 
 
-/* C++ ==============================================================================
-BOOL WINAPI GetComputerName(         // UInt
-    _Out_    LPTSTR lpBuffer,        // Str
-    _Inout_  LPDWORD lpnSize         // UInt*
+
+
+/* C++ ==========================================================================================================================
+BOOL WINAPI GetComputerName(                                                         // UInt
+    _Out_    LPTSTR lpBuffer,                                                        // Ptr
+    _Inout_  LPDWORD lpnSize                                                         // UInt*
 );
-================================================================================== */
+============================================================================================================================== */

@@ -1,29 +1,30 @@
 ﻿; ===============================================================================================================================
-; Function......: SetDoubleClickTime
-; DLL...........: User32.dll
-; Library.......: User32.lib
-; U/ANSI........:
+; Function......: CreateDirectory
+; DLL...........: Kernel32.dll
+; Library.......: Kernel32.lib
+; U/ANSI........: CreateDirectoryW (Unicode) and CreateDirectoryA (ANSI)
 ; Author........: jNizM
 ; Modified......:
-; Links.........: https://msdn.microsoft.com/en-us/library/ms646263.aspx
-;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms646263.aspx
+; Links.........: https://msdn.microsoft.com/en-us/library/aa363855.aspx
+;                 https://msdn.microsoft.com/en-us/library/windows/desktop/aa363855.aspx
 ; ===============================================================================================================================
-SetDoubleClickTime(Interval)
+CreateDirectory(PathName)
 {
-    if !(DllCall("user32.dll\SetDoubleClickTime", "UInt", Interval))
+    if !(DllCall("kernel32.dll\CreateDirectory", "Str", PathName, "Ptr", 0))
         return DllCall("kernel32.dll\GetLastError")
     return 1
 }
 ; ===============================================================================================================================
 
-SetDoubleClickTime(500)
+CreateDirectory("C:\Temp\Directory")
 
 
 
 
 
 /* C++ ==========================================================================================================================
-BOOL WINAPI SetDoubleClickTime(                                                      // UInt
-    _In_  UINT uInterval                                                             // UInt
+BOOL WINAPI CreateDirectory(                                                         // UInt
+    _In_      LPCTSTR lpPathName,                                                    // Str
+    _In_opt_  LPSECURITY_ATTRIBUTES lpSecurityAttributes                             // Ptr
 );
 ============================================================================================================================== */
