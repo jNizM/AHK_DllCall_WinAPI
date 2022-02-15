@@ -11,7 +11,7 @@
 ClipCursor(Confines := True, Left := 100, Top := 200, Right := 800, Bottom := 900)
 {
     if !(Confines)
-        return DllCall("user32.dll\ClipCursor")
+        return DllCall("user32.dll\ClipCursor", "Int", 0)
     static RECT, init := VarSetCapacity(RECT, 16, 0)
     NumPut(Left, RECT, 0, "Int"), NumPut(Top, RECT, 4, "Int"), NumPut(Right, RECT, 8, "Int"), NumPut(Bottom, RECT, 12, "Int")
     if !(DllCall("user32.dll\ClipCursor", "Ptr", &RECT))
