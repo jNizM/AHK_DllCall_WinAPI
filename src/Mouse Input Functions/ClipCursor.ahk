@@ -8,15 +8,17 @@
 ; Links.........: https://msdn.microsoft.com/en-us/library/ms648383.aspx
 ;                 https://msdn.microsoft.com/en-us/library/windows/desktop/ms648383.aspx
 ; ===============================================================================================================================
-ClipCursor(Confines := True, Left := 100, Top := 200, Right := 800, Bottom := 900)
+ClipCursor(Confine := true, X1 := 100, Y1 := 200, X2 := 800, Y2 := 900)
 {
-    if !(Confines)
-        return DllCall("user32.dll\ClipCursor")
-    static RECT, init := VarSetCapacity(RECT, 16, 0)
-    NumPut(Left, RECT, 0, "Int"), NumPut(Top, RECT, 4, "Int"), NumPut(Right, RECT, 8, "Int"), NumPut(Bottom, RECT, 12, "Int")
-    if !(DllCall("user32.dll\ClipCursor", "Ptr", &RECT))
-        return DllCall("kernel32.dll\GetLastError")
-    return 1
+	if !(Confine)
+		return DllCall("ClipCursor", "Ptr", 0)
+
+	VarSetCapacity(RECT, 16, 0)
+	;DllCall("SetRect", "Ptr", &RECT, "Int", X1, "Int", Y1, "Int", X2, "Int", Y2)
+	NumPut(Y2, NumPut(X2, NumPut(Y1, NumPut(X1, RECT, 0, "Int"), "Int"), "Int"), "Int")
+	if !(DllCall("ClipCursor", "Ptr", &RECT))
+		return A_LastError
+	return true
 }
 ; ===============================================================================================================================
 
@@ -29,15 +31,15 @@ ClipCursor(False)                       ; Release the confines.
 
 
 /* C++ ==========================================================================================================================
-BOOL WINAPI ClipCursor(                                                              // UInt
+BOOL WINAPI ClipCursor(                                                              // Int
     _In_opt_  const RECT *lpRect                                                     // Ptr
 );
 
 
 typedef struct _RECT {
-    LONG left;                                                                       // Int         4          =>   0
-    LONG top;                                                                        // Int         4          =>   4
-    LONG right;                                                                      // Int         4          =>   8
-    LONG bottom;                                                                     // Int         4          =>  12
+    LONG left;                 ( X1 )                                                // Int         4          =>   0
+    LONG top;                  ( Y1 )                                                // Int         4          =>   4
+    LONG right;                ( X2 )                                                // Int         4          =>   8
+    LONG bottom;               ( Y2 )                                                // Int         4          =>  12
 } RECT, *PRECT;
 ============================================================================================================================== */
