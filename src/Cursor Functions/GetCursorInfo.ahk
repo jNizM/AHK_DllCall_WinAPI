@@ -17,7 +17,7 @@ GetCursorInfo()
 {
     CURSORINFO := Buffer(16 + A_PtrSize, 0)
     NumPut("UInt", CURSORINFO.Size, CURSORINFO, 0)
-    if (DllCall("GetCursorInfo", "Ptr", CURSORINFO))
+    if (DllCall("user32\GetCursorInfo", "Ptr", CURSORINFO))
     {
         tagCURSORINFO := Map()
         tagCURSORINFO["Flags"]   := NumGet(CURSORINFO,  4, "UInt")
